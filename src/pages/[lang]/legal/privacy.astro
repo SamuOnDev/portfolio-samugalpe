@@ -2,10 +2,13 @@
 import Nav from '../../../components/Nav.astro';
 import SEO from '../../../components/SEO.astro';
 import CookieBanner from '../../../components/CookieBanner.astro';
-import { t, DEFAULT_LANG, type ActiveLang, getAlternateLinks } from '../../../i18n';
+import { t, LANGS, type ActiveLang, getAlternateLinks } from '../../../i18n';
 
-const { lang: paramLang } = Astro.params;
-const lang = (paramLang as ActiveLang) ?? DEFAULT_LANG;
+export function getStaticPaths() {
+    return LANGS.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as ActiveLang;
 const path = '/legal/privacy';
 const alternates = getAlternateLinks(lang, path);
 ---
