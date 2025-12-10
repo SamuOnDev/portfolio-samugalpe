@@ -25,11 +25,19 @@ const alternates = getAlternateLinks(lang, path);
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
-    <body class="bg-slate-950 text-slate-50">
+    <body class="bg-slate-950 text-slate-50 antialiased selection:bg-indigo-500/20 selection:text-indigo-100">
         <CookieBanner lang={lang} />
         <Nav lang={lang} path={path} />
 
-        <main class="relative">
+        <main class="relative overflow-hidden">
+        <div
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.2),transparent_32%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.2),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(244,114,182,0.14),transparent_36%)]"
+        />
+        <div
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] [background-size:120px_120px]"
+        />
         <!-- HERO estilo template -->
         <section
             id="top"
@@ -40,9 +48,21 @@ const alternates = getAlternateLinks(lang, path);
             class="pointer-events-none absolute inset-x-0 top-[-200px] -z-10 flex justify-center opacity-40"
             >
             <div
-                class="h-[420px] w-[420px] rounded-full bg-gradient-to-tr from-indigo-500 via-sky-400 to-fuchsia-500 blur-3xl"
+                class="h-[420px] w-[420px] rounded-full bg-gradient-to-tr from-indigo-500 via-sky-400 to-fuchsia-500 blur-3xl animate-blob"
             />
             </div>
+            <div
+            aria-hidden="true"
+            class="pointer-events-none absolute left-10 top-16 -z-10 h-48 w-48 rounded-full bg-indigo-500/20 blur-3xl"
+            />
+            <div
+            aria-hidden="true"
+            class="pointer-events-none absolute right-14 top-6 -z-10 h-52 w-52 rounded-full bg-gradient-to-br from-cyan-400/40 via-fuchsia-400/30 to-transparent blur-3xl"
+            />
+            <div
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-x-12 bottom-4 -z-10 h-20 rounded-full bg-gradient-to-r from-indigo-500/15 via-transparent to-cyan-400/15 blur-3xl"
+            />
 
             <div
             class="mx-auto flex max-w-content flex-col gap-12 px-4 lg:grid lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)] lg:items-center"
@@ -71,21 +91,35 @@ const alternates = getAlternateLinks(lang, path);
                 <div class="flex flex-wrap items-center gap-3">
                 <a
                     href="#projects"
-                    class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-2 text-sm font-medium text-slate-950 shadow-soft hover:brightness-105"
+                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-300 px-5 py-2 text-sm font-semibold text-slate-950 shadow-glow transition focus:outline-none focus:ring-2 focus:ring-indigo-400/70 focus:ring-offset-1 focus:ring-offset-slate-950"
                 >
+                    <span
+                    aria-hidden="true"
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.35),transparent_40%),radial-gradient(circle_at_80%_0,rgba(255,255,255,0.25),transparent_32%)] opacity-0 transition duration-500 group-hover:opacity-80 group-hover:blur-sm"
+                    />
+                    <span class="relative flex items-center gap-2">
+                    <span class="h-2 w-2 rounded-full bg-slate-950/60" />
                     {t(lang, 'hero_primary')}
+                    </span>
                 </a>
                 <a
                     href="#contact"
-                    class="inline-flex items-center justify-center rounded-full border border-slate-600 px-5 py-2 text-sm text-slate-100 hover:bg-slate-900"
+                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-slate-600/70 px-5 py-2 text-sm font-medium text-slate-100 transition hover:border-indigo-400/70 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400/60 focus:ring-offset-1 focus:ring-offset-slate-950"
                 >
+                    <span
+                    aria-hidden="true"
+                    class="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-white/5 opacity-0 transition duration-500 group-hover:opacity-100 group-hover:translate-x-2"
+                    />
+                    <span class="relative flex items-center gap-2">
+                    <span class="h-1.5 w-1.5 rounded-full bg-slate-300/50" />
                     {t(lang, 'hero_secondary')}
+                    </span>
                 </a>
                 </div>
 
                 <!-- Mini “features” tipo template -->
                 <div class="grid gap-3 text-xs text-slate-300 sm:grid-cols-3">
-                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60">
                     <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
                     Performance
                     </span>
@@ -93,7 +127,7 @@ const alternates = getAlternateLinks(lang, path);
                     Webs rápidas, sin cargas innecesarias.
                     </span>
                 </div>
-                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60">
                     <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
                     Mantenimiento
                     </span>
@@ -101,7 +135,7 @@ const alternates = getAlternateLinks(lang, path);
                     Código limpio y fácil de extender.
                     </span>
                 </div>
-                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60">
                     <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
                     Enfoque
                     </span>
@@ -115,8 +149,13 @@ const alternates = getAlternateLinks(lang, path);
             <!-- Columna derecha: “preview” estilo template -->
             <div class="relative">
                 <div
-                class="relative rounded-3xl border border-slate-700/60 bg-slate-900/90 p-4 shadow-soft"
+                class="relative overflow-hidden rounded-3xl border border-slate-700/60 bg-slate-900/90 p-4 shadow-glow backdrop-blur"
                 >
+                <div
+                    aria-hidden="true"
+                    class="pointer-events-none absolute -inset-16 -z-10 bg-[conic-gradient(at_top_right,_rgba(99,102,241,0.4),rgba(34,211,238,0.15),rgba(236,72,153,0.15),rgba(99,102,241,0.4))] opacity-40 blur-3xl"
+                />
+                <div class="pointer-events-none absolute inset-x-4 top-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                 <!-- pestañas code/preview estilo template -->
                 <div class="mb-4 flex items-center justify-between gap-2 text-[0.7rem]">
                     <div class="inline-flex items-center gap-1 rounded-full bg-slate-800/90 p-1">
@@ -181,7 +220,7 @@ const alternates = getAlternateLinks(lang, path);
 
             <!-- tarjetas flotantes estilo template -->
             <div
-                class="pointer-events-none absolute -left-5 -bottom-5 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block"
+                class="pointer-events-none absolute -left-5 -bottom-5 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block animate-float [animation-delay:0.6s]"
                 >
                 <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
                     Tiempo de respuesta
@@ -190,9 +229,9 @@ const alternates = getAlternateLinks(lang, path);
                     <span class="text-lg font-semibold text-emerald-400">24h</span>
                     <span class="text-[0.65rem] text-slate-400">media</span>
                 </div>
-                </div>
-                <div
-                class="pointer-events-none absolute -right-6 -top-6 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block"
+            </div>
+            <div
+                class="pointer-events-none absolute -right-6 -top-6 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block animate-float"
                 >
                 <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
                     Tipo de proyectos
@@ -211,9 +250,13 @@ const alternates = getAlternateLinks(lang, path);
         <ProjectsGrid lang={lang} />
 
         <!-- SOBRE MÍ -->
-        <section id="about" class="bg-slate-950 py-16">
+        <section id="about" class="relative bg-slate-950 py-16">
             <div
-            class="mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)]"
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-x-0 top-6 h-32 bg-gradient-to-b from-indigo-500/10 via-transparent to-transparent"
+            />
+            <div
+            class="relative mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)]"
             >
             <div class="space-y-4">
                 <h2 class="text-2xl font-semibold tracking-tight">
@@ -228,14 +271,16 @@ const alternates = getAlternateLinks(lang, path);
             </div>
 
             <!-- “workflow” tipo lista vertical -->
-            <div class="space-y-4 rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+            <div class="relative space-y-4 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft backdrop-blur">
+                <div class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500/20 via-cyan-400/10 to-transparent blur-3xl" />
+                <div class="pointer-events-none absolute -left-6 bottom-0 h-28 w-28 rounded-full bg-fuchsia-500/10 blur-3xl" />
                 <div class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
                 Workflow
                 </div>
                 <ol class="space-y-3">
                 <li class="flex gap-3">
                     <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/20 text-[0.7rem] text-indigo-200"
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/70 to-cyan-400/70 text-[0.7rem] text-slate-950 shadow-soft"
                     >
                     1
                     </div>
@@ -248,7 +293,7 @@ const alternates = getAlternateLinks(lang, path);
                 </li>
                 <li class="flex gap-3">
                     <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/20 text-[0.7rem] text-indigo-200"
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/70 to-cyan-400/70 text-[0.7rem] text-slate-950 shadow-soft"
                     >
                     2
                     </div>
@@ -261,7 +306,7 @@ const alternates = getAlternateLinks(lang, path);
                 </li>
                 <li class="flex gap-3">
                     <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/20 text-[0.7rem] text-indigo-200"
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/70 to-cyan-400/70 text-[0.7rem] text-slate-950 shadow-soft"
                     >
                     3
                     </div>
@@ -278,8 +323,12 @@ const alternates = getAlternateLinks(lang, path);
         </section>
 
         <!-- STACK estilo tarjetas -->
-        <section id="stack" class="bg-slate-950 py-16">
-            <div class="mx-auto max-w-content px-4">
+        <section id="stack" class="relative bg-slate-950 py-16">
+            <div
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-cyan-400/10 via-transparent to-transparent"
+            />
+            <div class="relative mx-auto max-w-content px-4">
             <div class="mb-8 space-y-2">
                 <h2 class="text-2xl font-semibold tracking-tight">
                 {t(lang, 'section_stack_title')}
@@ -290,7 +339,7 @@ const alternates = getAlternateLinks(lang, path);
             </div>
 
             <div class="grid gap-4 lg:grid-cols-3">
-                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60 hover:shadow-glow">
                 <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
                     {t(lang, 'stack_frontend_title')}
                 </div>
@@ -300,7 +349,7 @@ const alternates = getAlternateLinks(lang, path);
                     ))}
                 </ul>
                 </div>
-                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60 hover:shadow-glow">
                 <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
                     {t(lang, 'stack_backend_title')}
                 </div>
@@ -310,7 +359,7 @@ const alternates = getAlternateLinks(lang, path);
                     ))}
                 </ul>
                 </div>
-                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60 hover:shadow-glow">
                 <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
                     {t(lang, 'stack_infra_title')}
                 </div>
@@ -327,10 +376,14 @@ const alternates = getAlternateLinks(lang, path);
         <!-- CONTACTO estilo sección final del template -->
         <section
             id="contact"
-            class="bg-gradient-to-t from-slate-950 via-slate-950 to-slate-900 py-16"
+            class="relative bg-gradient-to-t from-slate-950 via-slate-950 to-slate-900 py-16"
         >
             <div
-            class="mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1.2fr)]"
+            aria-hidden="true"
+            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.12),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.12),transparent_30%)]"
+            />
+            <div
+            class="relative mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1.2fr)]"
             >
             <div class="space-y-4">
                 <h2 class="text-2xl font-semibold tracking-tight">
@@ -353,11 +406,13 @@ const alternates = getAlternateLinks(lang, path);
             </div>
 
             <form
-                class="space-y-3 rounded-3xl border border-slate-800 bg-slate-900/90 p-5 text-xs shadow-soft"
+                class="relative space-y-3 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/90 p-5 text-xs shadow-glow backdrop-blur"
                 action="mailto:TU_EMAIL_AQUI"
                 method="post"
                 enctype="text/plain"
             >
+                <div class="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_30%_10%,rgba(99,102,241,0.15),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(45,212,191,0.12),transparent_32%)] opacity-80" />
+                <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom_right,rgba(255,255,255,0.05),transparent)]" />
                 <div class="flex flex-col gap-1">
                 <label class="text-slate-200" for="name">
                     {t(lang, 'contact_name_label')}
@@ -367,7 +422,7 @@ const alternates = getAlternateLinks(lang, path);
                     name="name"
                     type="text"
                     required
-                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none focus:border-indigo-400"
+                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-indigo-300 focus:ring-2 focus:ring-indigo-400/50"
                 />
                 </div>
                 <div class="flex flex-col gap-1">
@@ -379,7 +434,7 @@ const alternates = getAlternateLinks(lang, path);
                     name="email"
                     type="email"
                     required
-                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none focus:border-indigo-400"
+                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-indigo-300 focus:ring-2 focus:ring-indigo-400/50"
                 />
                 </div>
                 <div class="flex flex-col gap-1">
@@ -391,14 +446,21 @@ const alternates = getAlternateLinks(lang, path);
                     name="message"
                     rows="4"
                     required
-                    class="resize-none rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none focus:border-indigo-400"
+                    class="resize-none rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-indigo-300 focus:ring-2 focus:ring-indigo-400/50"
                 />
                 </div>
                 <button
                 type="submit"
-                class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-2 text-xs font-medium text-slate-950 shadow-soft hover:brightness-105"
+                class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-300 px-5 py-2 text-xs font-semibold text-slate-950 shadow-glow transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-indigo-400/70 focus:ring-offset-1 focus:ring-offset-slate-950"
                 >
-                {t(lang, 'contact_submit')}
+                <span
+                    aria-hidden="true"
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.45),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.2),transparent_35%)] opacity-0 transition duration-500 group-hover:opacity-90"
+                />
+                <span class="relative flex items-center gap-2">
+                    <span class="h-1.5 w-1.5 rounded-full bg-slate-900/50" />
+                    {t(lang, 'contact_submit')}
+                </span>
                 </button>
             </form>
             </div>
