@@ -1,0 +1,45 @@
+---
+import { t } from '../i18n';
+
+interface AlternateLink {
+    lang: string;
+    href: string;
+}
+
+interface Props {
+    lang: import('../i18n').ActiveLang;
+    titleKey: string;
+    descriptionKey: string;
+    path?: string;
+    alternates?: AlternateLink[];
+}
+
+const { lang, titleKey, descriptionKey, path = '/', alternates = [] } =
+    Astro.props as Props;
+
+// Ajusta esta URL a la que vayas a usar en producción
+const SITE_URL = 'https://samugalpe.dev';
+
+const title = t(lang, titleKey);
+const description = t(lang, descriptionKey);
+const siteName = t(lang, 'seo_site_name');
+const url = new URL(path, SITE_URL).toString();
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={url} />
+
+{alternates.map((alt) => (
+    <link rel="alternate" hreflang={alt.lang} href={alt.href} />
+))}
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />

@@ -1,0 +1,110 @@
+---
+import { t, type ActiveLang } from '../i18n';
+
+interface Props {
+    lang: ActiveLang;
+}
+
+const { lang } = Astro.props as Props;
+const STORAGE_KEY = 'cookie-consent-v1';
+---
+
+<div
+    id="cookie-banner"
+    class="pointer-events-auto fixed inset-x-0 bottom-0 z-50 hidden justify-center px-4 pb-4"
+    >
+    <div
+        class="max-w-content w-full rounded-2xl bg-slate-900/95 p-4 shadow-soft border border-slate-700"
+    >
+        <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <div class="space-y-1 text-sm">
+            <div class="font-semibold text-slate-100">
+            {t(lang, 'cookies_banner_title')}
+            </div>
+            <p class="text-xs text-slate-300">
+            {t(lang, 'cookies_banner_text')}
+            </p>
+        </div>
+        <div class="flex flex-wrap gap-2 text-xs">
+            <a
+            href={`/${lang}/legal/cookies`}
+            class="rounded-full border border-slate-600 px-3 py-1 text-slate-200 hover:bg-slate-800"
+            >
+            {t(lang, 'cookies_more_info')}
+            </a>
+            <button
+            id="cookie-necessary"
+            class="rounded-full border border-slate-600 px-3 py-1 text-slate-200 hover:bg-slate-800"
+            >
+            {t(lang, 'cookies_accept_necessary')}
+            </button>
+            <button
+            id="cookie-all"
+            class="rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 px-3 py-1 font-medium text-slate-950 hover:brightness-105"
+            >
+            {t(lang, 'cookies_accept_all')}
+            </button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    (function () {
+        const STORAGE_KEY = '{STORAGE_KEY}';
+        if (typeof window === 'undefined') return;
+
+        function hideBanner() {
+        const el = document.getElementById('cookie-banner');
+        if (el) el.style.display = 'none';
+        }
+
+        function showBanner() {
+        const el = document.getElementById('cookie-banner');
+        if (el) el.style.display = 'flex';
+        }
+
+        function saveConsent(value) {
+        const data = {
+            value,
+            categories: {
+            necessary: true,
+            analytics: value === 'all',
+            marketing: value === 'all'
+            },
+            date: new Date().toISOString()
+        };
+        try {
+            window.localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+        } catch (e) {
+            // silencioso
+        }
+        hideBanner();
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+        let existing = null;
+        try {
+            existing = window.localStorage.getItem(STORAGE_KEY);
+        } catch (e) {}
+
+        if (!existing) {
+            showBanner();
+        }
+
+        const btnAll = document.getElementById('cookie-all');
+        const btnNec = document.getElementById('cookie-necessary');
+
+        if (btnAll) {
+            btnAll.addEventListener('click', function () {
+            saveConsent('all');
+            });
+        }
+        if (btnNec) {
+            btnNec.addEventListener('click', function () {
+            saveConsent('necessary');
+            });
+        }
+        });
+    })();
+</script>

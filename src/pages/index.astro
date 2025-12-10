@@ -1,0 +1,421 @@
+---
+import Nav from '../components/Nav.astro';
+import SEO from '../components/SEO.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import ProjectsGrid from '../components/ProjectsGrid.astro';
+import { t, DEFAULT_LANG, type ActiveLang, getAlternateLinks } from '../i18n';
+
+const { lang: paramLang } = Astro.params;
+const lang = (paramLang as ActiveLang) ?? DEFAULT_LANG;
+const path = '/';
+const alternates = getAlternateLinks(lang, path);
+---
+
+<!DOCTYPE html>
+<html lang={lang} class="scroll-smooth">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <SEO
+        lang={lang}
+        titleKey="seo_home_title"
+        descriptionKey="seo_home_description"
+        path={`/${lang}/`}
+        alternates={alternates}
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    </head>
+    <body class="bg-slate-950 text-slate-50">
+        <CookieBanner lang={lang} />
+        <Nav lang={lang} path={path} />
+
+        <main class="relative">
+        <!-- HERO estilo template -->
+        <section
+            id="top"
+            class="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 pb-20 pt-16"
+        >
+            <!-- “blob” de fondo -->
+            <div
+            class="pointer-events-none absolute inset-x-0 top-[-200px] -z-10 flex justify-center opacity-40"
+            >
+            <div
+                class="h-[420px] w-[420px] rounded-full bg-gradient-to-tr from-indigo-500 via-sky-400 to-fuchsia-500 blur-3xl"
+            />
+            </div>
+
+            <div
+            class="mx-auto flex max-w-content flex-col gap-12 px-4 lg:grid lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)] lg:items-center"
+            >
+            <!-- Columna izquierda: texto -->
+            <div class="space-y-6">
+                <div class="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/70 px-3 py-1 text-[0.7rem] text-slate-300">
+                <span class="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+                <span>Disponible para proyectos web seleccionados</span>
+                </div>
+
+                <div class="space-y-3">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+                    {t(lang, 'hero_kicker')}
+                </p>
+                <h1
+                    class="text-3xl font-semibold leading-tight tracking-tight sm:text-4xl lg:text-[2.6rem]"
+                >
+                    {t(lang, 'hero_title')}
+                </h1>
+                <p class="max-w-xl text-sm text-slate-300">
+                    {t(lang, 'hero_subtitle')}
+                </p>
+                </div>
+
+                <div class="flex flex-wrap items-center gap-3">
+                <a
+                    href="#projects"
+                    class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-2 text-sm font-medium text-slate-950 shadow-soft hover:brightness-105"
+                >
+                    {t(lang, 'hero_primary')}
+                </a>
+                <a
+                    href="#contact"
+                    class="inline-flex items-center justify-center rounded-full border border-slate-600 px-5 py-2 text-sm text-slate-100 hover:bg-slate-900"
+                >
+                    {t(lang, 'hero_secondary')}
+                </a>
+                </div>
+
+                <!-- Mini “features” tipo template -->
+                <div class="grid gap-3 text-xs text-slate-300 sm:grid-cols-3">
+                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                    Performance
+                    </span>
+                    <span class="font-medium">
+                    Webs rápidas, sin cargas innecesarias.
+                    </span>
+                </div>
+                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                    Mantenimiento
+                    </span>
+                    <span class="font-medium">
+                    Código limpio y fácil de extender.
+                    </span>
+                </div>
+                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3">
+                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                    Enfoque
+                    </span>
+                    <span class="font-medium">
+                    Pocos proyectos, bien hechos.
+                    </span>
+                </div>
+                </div>
+            </div>
+
+            <!-- Columna derecha: “preview” estilo template -->
+            <div class="relative">
+                <div
+                class="relative rounded-3xl border border-slate-700/60 bg-slate-900/90 p-4 shadow-soft"
+                >
+                <!-- pestañas code/preview estilo template -->
+                <div class="mb-4 flex items-center justify-between gap-2 text-[0.7rem]">
+                    <div class="inline-flex items-center gap-1 rounded-full bg-slate-800/90 p-1">
+                    <button
+                        class="rounded-full bg-slate-950 px-3 py-1 font-medium text-slate-100"
+                    >
+                        Code
+                    </button>
+                    <button class="px-3 py-1 text-slate-400">
+                        Preview
+                    </button>
+                    </div>
+                    <span class="text-slate-400">Astro · Tailwind · TypeScript</span>
+                </div>
+
+                <!-- ventana “código / preview” -->
+                <div
+                    class="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-tr from-slate-900 via-slate-900 to-slate-950"
+                >
+                    <div class="flex items-center gap-1 border-b border-slate-800 px-3 py-2">
+                    <span class="h-2 w-2 rounded-full bg-red-500" />
+                    <span class="h-2 w-2 rounded-full bg-amber-400" />
+                    <span class="h-2 w-2 rounded-full bg-emerald-400" />
+                    <span class="ml-2 text-[0.7rem] text-slate-400">
+                        portfolio-samugalpe.astro
+                    </span>
+                    </div>
+
+                    <div class="space-y-1 p-4 text-[0.7rem] font-mono leading-relaxed">
+                    <p class="text-slate-500">
+                        <span class="text-indigo-400">const</span> developer{' '}
+                        <span class="text-slate-300">=</span> {'{'}
+                    </p>
+                    <p class="pl-4 text-slate-300">
+                        name: <span class="text-emerald-400">'samugalpe'</span>,
+                    </p>
+                    <p class="pl-4 text-slate-300">
+                        role: <span class="text-emerald-400">'Full-Stack Web Developer'</span>,
+                    </p>
+                    <p class="pl-4 text-slate-300">
+                        stack: <span class="text-emerald-400">['Astro','Tailwind','C#','.NET']</span>,
+                    </p>
+                    <p class="text-slate-500">{'}'};</p>
+                    <p class="pt-2 text-slate-500">
+                        // centrado en webs limpias, rápidas y mantenibles
+                    </p>
+                    </div>
+                </div>
+
+                <!-- barra inferior estilo KPIs -->
+                <div class="mt-4 flex flex-wrap items-center gap-3 text-[0.7rem]">
+                    <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-3 py-1">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    <span class="text-slate-300">Deploys con CI/CD básico</span>
+                    </div>
+                    <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-3 py-1">
+                    <span class="text-slate-400">+X</span>
+                    <span class="text-slate-300">proyectos productivos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- tarjetas flotantes estilo template -->
+            <div
+                class="pointer-events-none absolute -left-5 -bottom-5 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block"
+                >
+                <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                    Tiempo de respuesta
+                </div>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-lg font-semibold text-emerald-400">24h</span>
+                    <span class="text-[0.65rem] text-slate-400">media</span>
+                </div>
+                </div>
+                <div
+                class="pointer-events-none absolute -right-6 -top-6 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block"
+                >
+                <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                    Tipo de proyectos
+                </div>
+                <ul class="space-y-0.5">
+                    <li>· Landing pages</li>
+                    <li>· Webs corporativas</li>
+                    <li>· Portfolios dev</li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- PROYECTOS estilo cards -->
+        <ProjectsGrid lang={lang} />
+
+        <!-- SOBRE MÍ -->
+        <section id="about" class="bg-slate-950 py-16">
+            <div
+            class="mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)]"
+            >
+            <div class="space-y-4">
+                <h2 class="text-2xl font-semibold tracking-tight">
+                {t(lang, 'section_about_title')}
+                </h2>
+                <p class="text-sm text-slate-300">
+                {t(lang, 'section_about_p1')}
+                </p>
+                <p class="text-sm text-slate-300">
+                {t(lang, 'section_about_p2')}
+                </p>
+            </div>
+
+            <!-- “workflow” tipo lista vertical -->
+            <div class="space-y-4 rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+                <div class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                Workflow
+                </div>
+                <ol class="space-y-3">
+                <li class="flex gap-3">
+                    <div
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/20 text-[0.7rem] text-indigo-200"
+                    >
+                    1
+                    </div>
+                    <div class="space-y-1">
+                    <div class="font-medium text-slate-100">Brief claro y sincero</div>
+                    <p class="text-slate-400">
+                        Entender qué necesitas realmente, qué problema resuelve la web y qué no.
+                    </p>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <div
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/20 text-[0.7rem] text-indigo-200"
+                    >
+                    2
+                    </div>
+                    <div class="space-y-1">
+                    <div class="font-medium text-slate-100">Arquitectura y contenido</div>
+                    <p class="text-slate-400">
+                        Definir estructura de páginas, secciones y llamadas a la acción antes de tocar código.
+                    </p>
+                    </div>
+                </li>
+                <li class="flex gap-3">
+                    <div
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-indigo-500/20 text-[0.7rem] text-indigo-200"
+                    >
+                    3
+                    </div>
+                    <div class="space-y-1">
+                    <div class="font-medium text-slate-100">Implementación y detalles</div>
+                    <p class="text-slate-400">
+                        Maquetación, integración y microdetalles de rendimiento y accesibilidad.
+                    </p>
+                    </div>
+                </li>
+                </ol>
+            </div>
+            </div>
+        </section>
+
+        <!-- STACK estilo tarjetas -->
+        <section id="stack" class="bg-slate-950 py-16">
+            <div class="mx-auto max-w-content px-4">
+            <div class="mb-8 space-y-2">
+                <h2 class="text-2xl font-semibold tracking-tight">
+                {t(lang, 'section_stack_title')}
+                </h2>
+                <p class="text-sm text-slate-400">
+                {t(lang, 'section_stack_subtitle')}
+                </p>
+            </div>
+
+            <div class="grid gap-4 lg:grid-cols-3">
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    {t(lang, 'stack_frontend_title')}
+                </div>
+                <ul class="space-y-1 text-slate-300">
+                    {t(lang, 'stack_frontend_items').split(';').map((item) => (
+                    <li>· {item}</li>
+                    ))}
+                </ul>
+                </div>
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    {t(lang, 'stack_backend_title')}
+                </div>
+                <ul class="space-y-1 text-slate-300">
+                    {t(lang, 'stack_backend_items').split(';').map((item) => (
+                    <li>· {item}</li>
+                    ))}
+                </ul>
+                </div>
+                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs">
+                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                    {t(lang, 'stack_infra_title')}
+                </div>
+                <ul class="space-y-1 text-slate-300">
+                    {t(lang, 'stack_infra_items').split(';').map((item) => (
+                    <li>· {item}</li>
+                    ))}
+                </ul>
+                </div>
+            </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO estilo sección final del template -->
+        <section
+            id="contact"
+            class="bg-gradient-to-t from-slate-950 via-slate-950 to-slate-900 py-16"
+        >
+            <div
+            class="mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1.2fr)]"
+            >
+            <div class="space-y-4">
+                <h2 class="text-2xl font-semibold tracking-tight">
+                {t(lang, 'section_contact_title')}
+                </h2>
+                <p class="text-sm text-slate-300">
+                {t(lang, 'section_contact_subtitle')}
+                </p>
+                <p class="text-sm text-slate-300">
+                {t(lang, 'section_contact_intro1')}
+                </p>
+                <p class="text-sm text-slate-300">
+                {t(lang, 'section_contact_intro2')}
+                </p>
+                <ul class="list-disc space-y-1 pl-4 text-xs text-slate-300">
+                <li>{t(lang, 'section_contact_item1')}</li>
+                <li>{t(lang, 'section_contact_item2')}</li>
+                <li>{t(lang, 'section_contact_item3')}</li>
+                </ul>
+            </div>
+
+            <form
+                class="space-y-3 rounded-3xl border border-slate-800 bg-slate-900/90 p-5 text-xs shadow-soft"
+                action="mailto:TU_EMAIL_AQUI"
+                method="post"
+                enctype="text/plain"
+            >
+                <div class="flex flex-col gap-1">
+                <label class="text-slate-200" for="name">
+                    {t(lang, 'contact_name_label')}
+                </label>
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none focus:border-indigo-400"
+                />
+                </div>
+                <div class="flex flex-col gap-1">
+                <label class="text-slate-200" for="email">
+                    {t(lang, 'contact_email_label')}
+                </label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none focus:border-indigo-400"
+                />
+                </div>
+                <div class="flex flex-col gap-1">
+                <label class="text-slate-200" for="message">
+                    {t(lang, 'contact_message_label')}
+                </label>
+                <textarea
+                    id="message"
+                    name="message"
+                    rows="4"
+                    required
+                    class="resize-none rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none focus:border-indigo-400"
+                />
+                </div>
+                <button
+                type="submit"
+                class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 px-5 py-2 text-xs font-medium text-slate-950 shadow-soft hover:brightness-105"
+                >
+                {t(lang, 'contact_submit')}
+                </button>
+            </form>
+            </div>
+        </section>
+        </main>
+
+        <footer class="border-t border-slate-800 bg-slate-950 py-4">
+        <div
+            class="mx-auto flex max-w-content items-center justify-between px-4 text-[0.7rem] text-slate-400"
+        >
+            <span>
+            © {new Date().getFullYear()} samugalpe. {t(lang, 'footer_rights')}
+            </span>
+            <a href="#top" class="hover:text-slate-200">
+            {t(lang, 'footer_back_to_top')}
+            </a>
+        </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+---
+import type { ActiveLang } from '../i18n';
+import { LANGS } from '../i18n';
+
+interface Props {
+    lang: ActiveLang;
+    path?: string;
+}
+
+const { lang, path = '/' } = Astro.props as Props;
+---
+
+<div class="flex items-center gap-2 text-xs text-slate-400">
+    {LANGS.map((l) => (
+        <a
+        href={`/${l}${path}`}
+        class={`uppercase tracking-[0.18em] ${
+            l === lang ? 'text-slate-100' : 'text-slate-400 hover:text-slate-100'
+        }`}
+        >
+        {l}
+        </a>
+  ))}
+</div>

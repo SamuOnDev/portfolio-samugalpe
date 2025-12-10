@@ -1,0 +1,69 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+import { t, DEFAULT_LANG, type ActiveLang } from '../i18n';
+
+interface Props {
+    lang?: ActiveLang;
+    path?: string;
+}
+
+const { lang: explicitLang, path = '/' } = Astro.props as Props;
+const lang = explicitLang ?? ((Astro.params.lang as ActiveLang | undefined) ?? DEFAULT_LANG);
+
+const LINKS: Array<{ key: string; href: string }> = [
+    { key: 'nav_projects', href: `#projects` },
+    { key: 'nav_about', href: `#about` },
+    { key: 'nav_stack', href: `#stack` },
+    { key: 'nav_contact', href: `#contact` }
+];
+---
+
+<header
+    class="sticky top-0 z-40 border-b border-slate-800/60 bg-slate-950/70 backdrop-blur-xl"
+    >
+    <div class="mx-auto flex max-w-content items-center justify-between px-4 py-3">
+        <a href={`/${lang}/`} class="flex items-center gap-2">
+        <div
+            class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500 to-cyan-400 text-xs font-bold"
+        >
+            SG
+        </div>
+        <div class="flex flex-col text-sm">
+            <span class="font-semibold tracking-wide">samugalpe</span>
+            <span class="text-[0.7rem] text-slate-400">
+            Full-Stack Web Developer
+            </span>
+        </div>
+        </a>
+
+        <nav class="hidden gap-6 text-xs font-medium text-slate-300 md:flex">
+        {LINKS.map((link) => (
+            <a
+            href={link.href}
+            class="relative pb-0.5 text-slate-400 transition hover:text-slate-50"
+            >
+            {t(lang, link.key)}
+            <span
+                class="absolute inset-x-0 -bottom-0.5 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-indigo-500 to-cyan-400 transition-transform group-hover:scale-x-100"
+            />
+            </a>
+        ))}
+        <a
+            href={`/${lang}/legal/cookies`}
+            class="text-xs text-slate-500 hover:text-slate-200"
+        >
+            {t(lang, 'nav_cookies')}
+        </a>
+        <a
+            href={`/${lang}/legal/privacy`}
+            class="text-xs text-slate-500 hover:text-slate-200"
+        >
+            {t(lang, 'nav_privacy')}
+        </a>
+        </nav>
+
+        <div class="flex items-center gap-4">
+        <LanguageSwitcher lang={lang} path={path} />
+        </div>
+    </div>
+</header>
