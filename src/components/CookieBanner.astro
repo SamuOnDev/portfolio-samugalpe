@@ -6,7 +6,6 @@ interface Props {
 }
 
 const { lang } = Astro.props as Props;
-const STORAGE_KEY = 'cookie-consent-v1';
 ---
 
 <div
@@ -51,7 +50,7 @@ const STORAGE_KEY = 'cookie-consent-v1';
 
 <script is:inline>
     (function () {
-        const STORAGE_KEY = '{STORAGE_KEY}';
+        const STORAGE_KEY = 'cookie-consent-v1';
         if (typeof window === 'undefined') return;
 
         function hideBanner() {
