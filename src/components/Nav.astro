@@ -39,13 +39,13 @@ const LINKS: Array<{ key: string; href: string }> = [
         <nav class="hidden gap-6 text-xs font-medium text-slate-300 md:flex">
         {LINKS.map((link) => (
             <a
-            href={link.href}
-            class="relative pb-0.5 text-slate-400 transition hover:text-slate-50"
+                href={link.href}
+                class="group relative pb-0.5 text-slate-400 transition hover:text-slate-50"
             >
-            {t(lang, link.key)}
-            <span
-                class="absolute inset-x-0 -bottom-0.5 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-indigo-500 to-cyan-400 transition-transform group-hover:scale-x-100"
-            />
+                {t(lang, link.key)}
+                <span
+                    class="absolute inset-x-0 -bottom-0.5 h-[2px] origin-left scale-x-0 bg-gradient-to-r from-indigo-500 to-cyan-400 transition-transform group-hover:scale-x-100"
+                />
             </a>
         ))}
         <a
