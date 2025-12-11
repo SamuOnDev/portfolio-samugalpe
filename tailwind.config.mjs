@@ -29,14 +29,14 @@ export default {
                     '50%': { transform: 'translateY(-8px)' }
                 },
                 shimmer: {
-                    '0%': { backgroundPosition: '0% 50%' },
-                    '100%': { backgroundPosition: '200% 50%' }
+                    '0%, 100%': { backgroundPosition: '48% 52%' },
+                    '50%': { backgroundPosition: '52% 48%' }
                 }
             },
             animation: {
                 blob: 'blob 18s ease-in-out infinite',
                 float: 'float 6s ease-in-out infinite',
-                shimmer: 'shimmer 6s linear infinite'
+                shimmer: 'shimmer 60s ease-in-out infinite'
             }
         }
     },
