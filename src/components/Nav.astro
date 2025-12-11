@@ -28,9 +28,9 @@ const LINKS: Array<{ key: string; href: string }> = [
         >
             SG
         </div>
-        <div class="flex flex-col text-sm">
-            <span class="font-semibold tracking-wide">samugalpe</span>
-            <span class="text-[0.7rem] text-slate-400">
+        <div class="flex flex-col text-sm md:text-base">
+            <span class="text-lg font-semibold leading-tight tracking-wide">samugalpe</span>
+            <span class="text-[0.7rem] text-slate-400 md:text-xs">
             Full-Stack Web Developer
             </span>
         </div>
@@ -48,18 +48,6 @@ const LINKS: Array<{ key: string; href: string }> = [
                 />
             </a>
         ))}
-        <a
-            href={`/${lang}/legal/cookies`}
-            class="text-xs text-slate-500 hover:text-slate-200"
-        >
-            {t(lang, 'nav_cookies')}
-        </a>
-        <a
-            href={`/${lang}/legal/privacy`}
-            class="text-xs text-slate-500 hover:text-slate-200"
-        >
-            {t(lang, 'nav_privacy')}
-        </a>
         </nav>
 
         <div class="flex items-center gap-4">

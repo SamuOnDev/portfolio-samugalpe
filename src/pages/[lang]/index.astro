@@ -2,6 +2,7 @@
 import Nav from '../../components/Nav.astro';
 import SEO from '../../components/SEO.astro';
 import CookieBanner from '../../components/CookieBanner.astro';
+import Footer from '../../components/Footer.astro';
 import ProjectsGrid from '../../components/ProjectsGrid.astro';
 import { t, LANGS, type ActiveLang, getAlternateLinks } from '../../i18n';
 
@@ -34,7 +35,10 @@ const alternates = getAlternateLinks(lang, path);
 
         <main>
         <!-- HERO -->
-        <section class="bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 pb-16 pt-10">
+        <section
+            id="top"
+            class="bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 pb-16 pt-10"
+        >
             <div class="mx-auto grid max-w-content gap-8 px-4 md:grid-cols-[minmax(0,2fr)_minmax(0,1.2fr)] md:items-center">
             <div class="space-y-4">
                 <p class="text-xs font-medium uppercase tracking-[0.25em] text-slate-400">
@@ -258,15 +262,6 @@ const alternates = getAlternateLinks(lang, path);
         </section>
         </main>
 
-        <footer class="border-t border-slate-800 bg-slate-950 py-4">
-        <div class="mx-auto flex max-w-content items-center justify-between px-4 text-[0.7rem] text-slate-400">
-            <span>
-            © {new Date().getFullYear()} samugalpe. {t(lang, 'footer_rights')}
-            </span>
-            <a href="#top" class="hover:text-slate-200">
-            {t(lang, 'footer_back_to_top')}
-            </a>
-        </div>
-        </footer>
+        <Footer lang={lang} />
     </body>
 </html>

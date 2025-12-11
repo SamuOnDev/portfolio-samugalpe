@@ -2,6 +2,7 @@
 import Nav from '../components/Nav.astro';
 import SEO from '../components/SEO.astro';
 import CookieBanner from '../components/CookieBanner.astro';
+import Footer from '../components/Footer.astro';
 import ProjectsGrid from '../components/ProjectsGrid.astro';
 import { t, DEFAULT_LANG, type ActiveLang, getAlternateLinks } from '../i18n';
 
@@ -467,17 +468,6 @@ const alternates = getAlternateLinks(lang, path);
         </section>
         </main>
 
-        <footer class="border-t border-slate-800 bg-slate-950 py-4">
-        <div
-            class="mx-auto flex max-w-content items-center justify-between px-4 text-[0.7rem] text-slate-400"
-        >
-            <span>
-            © {new Date().getFullYear()} samugalpe. {t(lang, 'footer_rights')}
-            </span>
-            <a href="#top" class="hover:text-slate-200">
-            {t(lang, 'footer_back_to_top')}
-            </a>
-        </div>
-        </footer>
+        <Footer lang={lang} />
     </body>
 </html>
