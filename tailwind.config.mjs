@@ -4,9 +4,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-ink': '#0b1220',
-                'brand-navy': '#102039',
-                'brand-royal': '#1f3f70',
+                'brand-ink': '#0a0b0f',
+                'brand-navy': '#14161b',
+                'brand-royal': '#2a2f38',
                 'brand-gold': '#d6b25e',
                 'brand-cream': '#f1e4c3'
             },
@@ -15,7 +15,7 @@ export default {
             },
             boxShadow: {
                 soft: '0 18px 45px rgba(0,0,0,0.6)',
-                glow: '0 0 0 1px rgba(99,102,241,0.15), 0 25px 60px rgba(0,0,0,0.55)'
+                glow: '0 0 0 1px rgba(214,178,94,0.18), 0 25px 60px rgba(0,0,0,0.55)'
             },
             borderRadius: {
                 xl2: '1.25rem'
