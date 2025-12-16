@@ -8,8 +8,66 @@ import { t, DEFAULT_LANG, type ActiveLang, getAlternateLinks } from '../i18n';
 
 const { lang: paramLang } = Astro.params;
 const lang = (paramLang as ActiveLang) ?? DEFAULT_LANG;
-const path = '/';
-const alternates = getAlternateLinks(lang, path);
+const pagePath = '/';
+const alternates = getAlternateLinks(lang, pagePath);
+
+const principles = [
+    {
+        title: 'Performance first',
+        subtitle: 'Cargas ligeras y optimizadas para el usuario.',
+        icon: 'rocket',
+    },
+    {
+        title: 'Código limpio',
+        subtitle: 'Bases legibles y sencillas de mantener.',
+        icon: 'code',
+    },
+    {
+        title: 'UX clara',
+        subtitle: 'Interfaces sin distracciones ni confusiones.',
+        icon: 'compass',
+    },
+    {
+        title: 'SEO técnico básico',
+        subtitle: 'Etiquetas, estructura y performance en orden.',
+        icon: 'search',
+    },
+];
+
+const principleIcons = {
+    rocket: (
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-brand-ink" aria-hidden="true">
+            <path
+                fill="currentColor"
+                d="M5.5 19.5c.9-.28 1.63-.7 2.22-1.28l2.19-2.2c.18-.18.18-.46 0-.64l-2.29-2.3c-.18-.17-.46-.17-.64 0l-2.18 2.2C3.8 16.73 3.35 17.5 3 18.5c-.37 1.1-.5 2.03-.5 2.03s.93-.14 2-.53Zm11.49-3.92c.21-.72.01-1.54-.54-2.09l-2.94-2.94c-.55-.55-1.37-.75-2.09-.54l-1.2.35c-.23.07-.29.35-.12.52l5.02 5.02c.17.17.45.1.52-.12zm-.75-7.2a.38.38 0 0 1 .08-.41l1.33-1.34c.52-.51.89-.94 1.12-1.5c.12-.27-.12-.52-.4-.4c-.56.23-.99.6-1.5 1.12l-1.34 1.33a.38.38 0 0 1-.41.08c-.3-.13-.62.18-.49.48l.3.7c.1.26.41.34.61.14zM11 14c2.76 0 5-2.24 5-5c0-.82-.2-1.6-.55-2.29c-.08-.16.08-.35.25-.28c1.31.56 2.48 1.4 3.49 2.42l.55.55c.32.32.85.32 1.18 0c.32-.32.32-.85 0-1.18l-1.92-1.92C16.68 3.87 13.8 3 11 3L4.94 9.06c-1.17 1.17-1.97 2.65-2.31 4.26l-.6 2.75a.8.8 0 0 0 .94.94l2.75-.6c1.61-.34 3.09-1.14 4.26-2.31z"
+            />
+        </svg>
+    ),
+    code: (
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-brand-ink" aria-hidden="true">
+            <path
+                fill="currentColor"
+                d="M10.4 18.5a.75.75 0 0 1-.52-.94l3-10a.75.75 0 1 1 1.44.42l-3 10a.75.75 0 0 1-.92.52zm-4.75-2.7l-3-3a.75.75 0 0 1 0-1.06l3-3a.75.75 0 0 1 1.06 1.06L4.06 12l2.65 2.65a.75.75 0 1 1-1.06 1.06zm12.7 0l2.65-2.65l-2.65-2.65a.75.75 0 0 1 1.06-1.06l3 3a.75.75 0 0 1 0 1.06l-3 3a.75.75 0 1 1-1.06-1.06z"
+            />
+        </svg>
+    ),
+    compass: (
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-brand-ink" aria-hidden="true">
+            <path
+                fill="currentColor"
+                d="m13.8 13.8l-3.27-1.63a.5.5 0 0 1-.2-.2L8.7 8.7a.5.5 0 0 1 .67-.67l3.27 1.63a.5.5 0 0 1 .2.2l1.63 3.27a.5.5 0 0 1-.66.67ZM12 3a9 9 0 1 0 0 18a9 9 0 0 0 0-18Zm-7.5 9a7.5 7.5 0 1 1 15 0a7.5 7.5 0 0 1-15 0Z"
+            />
+        </svg>
+    ),
+    search: (
+        <svg viewBox="0 0 24 24" class="h-5 w-5 text-brand-ink" aria-hidden="true">
+            <path
+                fill="currentColor"
+                d="M10.5 4a6.5 6.5 0 1 0 4.1 11.58l3.41 3.41a.75.75 0 1 0 1.06-1.06l-3.41-3.41A6.5 6.5 0 0 0 10.5 4Zm-5 6.5a5 5 0 1 1 10 0a5 5 0 0 1-10 0Z"
+            />
+        </svg>
+    ),
+};
 ---
 
 <!DOCTYPE html>
@@ -28,7 +86,7 @@ const alternates = getAlternateLinks(lang, path);
     </head>
     <body class="bg-brand-ink text-slate-50 antialiased selection:bg-amber-200/25 selection:text-amber-50">
         <CookieBanner lang={lang} />
-        <Nav lang={lang} path={path} />
+        <Nav lang={lang} path={pagePath} />
 
         <main class="relative overflow-hidden">
         <div
@@ -271,54 +329,22 @@ const alternates = getAlternateLinks(lang, path);
                 </p>
             </div>
 
-            <!-- “workflow” tipo lista vertical -->
-            <div class="relative space-y-4 overflow-hidden rounded-3xl border border-brand-royal/40 bg-brand-navy/85 p-4 text-xs shadow-soft backdrop-blur">
-                <div class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-brand-royal/30 via-brand-gold/18 to-transparent blur-3xl" />
-                <div class="pointer-events-none absolute -left-6 bottom-0 h-28 w-28 rounded-full bg-brand-gold/12 blur-3xl" />
-                <div class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-300">
-                Workflow
+            <!-- Principios destacados -->
+            <div class="grid gap-3 text-xs sm:grid-cols-2">
+                {principles.map((principle) => (
+                <div
+                    class="group relative flex items-center gap-3 overflow-hidden rounded-full border border-brand-royal/45 bg-gradient-to-r from-brand-navy/90 via-brand-ink to-brand-navy/90 px-3 py-3 shadow-soft ring-1 ring-white/5 transition hover:-translate-y-0.5 hover:border-brand-gold/60"
+                >
+                    <div class="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-200/80 via-brand-gold/70 to-brand-cream/70 text-brand-ink shadow-glow">
+                    <span class="absolute inset-0 rounded-full bg-white/30 opacity-0 transition group-hover:opacity-30" />
+                    {principle.icon && principleIcons[principle.icon]}
+                    </div>
+                    <div class="flex flex-col leading-tight">
+                    <span class="text-sm font-semibold text-slate-50">{principle.title}</span>
+                    <span class="text-[0.7rem] text-slate-300">{principle.subtitle}</span>
+                    </div>
                 </div>
-                <ol class="space-y-3">
-                <li class="flex gap-3">
-                    <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold/80 to-amber-200/80 text-[0.7rem] text-brand-ink shadow-soft"
-                    >
-                    1
-                    </div>
-                    <div class="space-y-1">
-                    <div class="font-medium text-slate-50">Brief claro y sincero</div>
-                    <p class="text-slate-300">
-                        Entender qué necesitas realmente, qué problema resuelve la web y qué no.
-                    </p>
-                    </div>
-                </li>
-                <li class="flex gap-3">
-                    <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold/80 to-amber-200/80 text-[0.7rem] text-brand-ink shadow-soft"
-                    >
-                    2
-                    </div>
-                    <div class="space-y-1">
-                    <div class="font-medium text-slate-50">Arquitectura y contenido</div>
-                    <p class="text-slate-300">
-                        Definir estructura de páginas, secciones y llamadas a la acción antes de tocar código.
-                    </p>
-                    </div>
-                </li>
-                <li class="flex gap-3">
-                    <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold/80 to-amber-200/80 text-[0.7rem] text-brand-ink shadow-soft"
-                    >
-                    3
-                    </div>
-                    <div class="space-y-1">
-                    <div class="font-medium text-slate-50">Implementación y detalles</div>
-                    <p class="text-slate-300">
-                        Maquetación, integración y microdetalles de rendimiento y accesibilidad.
-                    </p>
-                    </div>
-                </li>
-                </ol>
+                ))}
             </div>
             </div>
         </section>
