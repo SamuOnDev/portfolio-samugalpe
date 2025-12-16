@@ -26,43 +26,43 @@ const alternates = getAlternateLinks(lang, path);
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
-    <body class="bg-slate-950 text-slate-50 antialiased selection:bg-indigo-500/20 selection:text-indigo-100">
+    <body class="bg-brand-ink text-slate-50 antialiased selection:bg-amber-200/25 selection:text-amber-50">
         <CookieBanner lang={lang} />
         <Nav lang={lang} path={path} />
 
         <main class="relative overflow-hidden">
         <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.2),transparent_32%),radial-gradient(circle_at_80%_0%,rgba(14,165,233,0.2),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(244,114,182,0.14),transparent_36%)]"
+            class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_22%,rgba(214,178,94,0.18),transparent_32%),radial-gradient(circle_at_82%_0%,rgba(31,63,112,0.26),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(16,34,60,0.18),transparent_38%)]"
         />
         <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] [background-size:120px_120px]"
+            class="pointer-events-none absolute inset-0 -z-10 opacity-50 [background-image:linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] [background-size:120px_120px]"
         />
         <!-- HERO estilo template -->
         <section
             id="top"
-            class="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 pb-20 pt-16"
+            class="relative overflow-hidden bg-gradient-to-b from-brand-ink via-[#0f1b2f] to-[#0a1426] pb-20 pt-16"
         >
             <!-- “blob” de fondo -->
             <div
             class="pointer-events-none absolute inset-x-0 top-[-200px] -z-10 flex justify-center opacity-40"
             >
             <div
-                class="h-[420px] w-[420px] rounded-full bg-gradient-to-tr from-indigo-500 via-sky-400 to-fuchsia-500 blur-3xl animate-blob"
+                class="h-[420px] w-[420px] rounded-full bg-gradient-to-tr from-brand-gold via-brand-cream to-brand-royal blur-3xl animate-blob"
             />
             </div>
             <div
             aria-hidden="true"
-            class="pointer-events-none absolute left-10 top-16 -z-10 h-48 w-48 rounded-full bg-indigo-500/20 blur-3xl"
+            class="pointer-events-none absolute left-10 top-16 -z-10 h-48 w-48 rounded-full bg-brand-gold/25 blur-3xl"
             />
             <div
             aria-hidden="true"
-            class="pointer-events-none absolute right-14 top-6 -z-10 h-52 w-52 rounded-full bg-gradient-to-br from-cyan-400/40 via-fuchsia-400/30 to-transparent blur-3xl"
+            class="pointer-events-none absolute right-14 top-6 -z-10 h-52 w-52 rounded-full bg-gradient-to-br from-brand-royal/45 via-brand-cream/25 to-transparent blur-3xl"
             />
             <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-x-12 bottom-4 -z-10 h-20 rounded-full bg-gradient-to-r from-indigo-500/15 via-transparent to-cyan-400/15 blur-3xl"
+            class="pointer-events-none absolute inset-x-12 bottom-4 -z-10 h-20 rounded-full bg-gradient-to-r from-brand-royal/20 via-transparent to-brand-gold/18 blur-3xl"
             />
 
             <div
@@ -70,13 +70,13 @@ const alternates = getAlternateLinks(lang, path);
             >
             <!-- Columna izquierda: texto -->
             <div class="space-y-6">
-                <div class="inline-flex items-center gap-2 rounded-full border border-slate-700/70 bg-slate-900/70 px-3 py-1 text-[0.7rem] text-slate-300">
-                <span class="inline-block h-2 w-2 rounded-full bg-emerald-400" />
+                <div class="inline-flex items-center gap-2 rounded-full border border-brand-royal/40 bg-brand-navy/80 px-3 py-1 text-[0.7rem] text-slate-200">
+                <span class="inline-block h-2 w-2 rounded-full bg-brand-gold" />
                 <span>Disponible para proyectos web seleccionados</span>
                 </div>
 
                 <div class="space-y-3">
-                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
+                <p class="text-xs font-semibold uppercase tracking-[0.25em] text-slate-300">
                     {t(lang, 'hero_kicker')}
                 </p>
                 <h1
@@ -84,7 +84,7 @@ const alternates = getAlternateLinks(lang, path);
                 >
                     {t(lang, 'hero_title')}
                 </h1>
-                <p class="max-w-xl text-sm text-slate-300">
+                <p class="max-w-xl text-sm text-slate-200">
                     {t(lang, 'hero_subtitle')}
                 </p>
                 </div>
@@ -92,7 +92,7 @@ const alternates = getAlternateLinks(lang, path);
                 <div class="flex flex-wrap items-center gap-3">
                 <a
                     href="#projects"
-                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-300 px-5 py-2 text-sm font-semibold text-slate-950 shadow-glow transition focus:outline-none focus:ring-2 focus:ring-indigo-400/70 focus:ring-offset-1 focus:ring-offset-slate-950"
+                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-brand-gold via-amber-200 to-brand-cream px-5 py-2 text-sm font-semibold text-brand-ink shadow-glow transition focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:ring-offset-1 focus:ring-offset-brand-ink"
                 >
                     <span
                     aria-hidden="true"
@@ -105,7 +105,7 @@ const alternates = getAlternateLinks(lang, path);
                 </a>
                 <a
                     href="#contact"
-                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-slate-600/70 px-5 py-2 text-sm font-medium text-slate-100 transition hover:border-indigo-400/70 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-400/60 focus:ring-offset-1 focus:ring-offset-slate-950"
+                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-brand-royal/50 px-5 py-2 text-sm font-medium text-slate-100 transition hover:border-brand-gold/70 hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-gold/60 focus:ring-offset-1 focus:ring-offset-brand-ink"
                 >
                     <span
                     aria-hidden="true"
@@ -120,24 +120,24 @@ const alternates = getAlternateLinks(lang, path);
 
                 <!-- Mini “features” tipo template -->
                 <div class="grid gap-3 text-xs text-slate-300 sm:grid-cols-3">
-                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60">
-                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                <div class="flex flex-col gap-1 rounded-2xl border border-brand-royal/40 bg-brand-navy/80 p-3 shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/60">
+                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-300">
                     Performance
                     </span>
                     <span class="font-medium">
                     Webs rápidas, sin cargas innecesarias.
                     </span>
                 </div>
-                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60">
-                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                <div class="flex flex-col gap-1 rounded-2xl border border-brand-royal/40 bg-brand-navy/80 p-3 shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/60">
+                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-300">
                     Mantenimiento
                     </span>
                     <span class="font-medium">
                     Código limpio y fácil de extender.
                     </span>
                 </div>
-                <div class="flex flex-col gap-1 rounded-2xl border border-slate-800 bg-slate-900/70 p-3 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60">
-                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                <div class="flex flex-col gap-1 rounded-2xl border border-brand-royal/40 bg-brand-navy/80 p-3 shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/60">
+                    <span class="text-[0.65rem] uppercase tracking-[0.16em] text-slate-300">
                     Enfoque
                     </span>
                     <span class="font-medium">
@@ -159,9 +159,9 @@ const alternates = getAlternateLinks(lang, path);
                 <div class="pointer-events-none absolute inset-x-4 top-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                 <!-- pestañas code/preview estilo template -->
                 <div class="mb-4 flex items-center justify-between gap-2 text-[0.7rem]">
-                    <div class="inline-flex items-center gap-1 rounded-full bg-slate-800/90 p-1">
+                    <div class="inline-flex items-center gap-1 rounded-full bg-brand-navy/90 p-1">
                     <button
-                        class="rounded-full bg-slate-950 px-3 py-1 font-medium text-slate-100"
+                        class="rounded-full bg-brand-ink px-3 py-1 font-medium text-slate-100"
                     >
                         Code
                     </button>
@@ -169,17 +169,17 @@ const alternates = getAlternateLinks(lang, path);
                         Preview
                     </button>
                     </div>
-                    <span class="text-slate-400">Astro · Tailwind · TypeScript</span>
+                    <span class="text-slate-300">Astro · Tailwind · TypeScript</span>
                 </div>
 
                 <!-- ventana “código / preview” -->
                 <div
-                    class="relative overflow-hidden rounded-2xl border border-slate-800 bg-gradient-to-tr from-slate-900 via-slate-900 to-slate-950"
+                    class="relative overflow-hidden rounded-2xl border border-brand-royal/40 bg-gradient-to-tr from-brand-navy via-brand-ink to-brand-ink"
                 >
-                    <div class="flex items-center gap-1 border-b border-slate-800 px-3 py-2">
+                    <div class="flex items-center gap-1 border-b border-brand-royal/40 px-3 py-2">
                     <span class="h-2 w-2 rounded-full bg-red-500" />
                     <span class="h-2 w-2 rounded-full bg-amber-400" />
-                    <span class="h-2 w-2 rounded-full bg-emerald-400" />
+                    <span class="h-2 w-2 rounded-full bg-brand-gold" />
                     <span class="ml-2 text-[0.7rem] text-slate-400">
                         portfolio-samuel-galpe.astro
                     </span>
@@ -187,17 +187,17 @@ const alternates = getAlternateLinks(lang, path);
 
                     <div class="space-y-1 p-4 text-[0.7rem] font-mono leading-relaxed">
                     <p class="text-slate-500">
-                        <span class="text-indigo-400">const</span> developer{' '}
+                        <span class="text-brand-gold">const</span> developer{' '}
                         <span class="text-slate-300">=</span> {'{'}
                     </p>
                     <p class="pl-4 text-slate-300">
-                        name: <span class="text-emerald-400">'Samuel Galpe'</span>,
+                        name: <span class="text-amber-200">'Samuel Galpe'</span>,
                     </p>
                     <p class="pl-4 text-slate-300">
-                        role: <span class="text-emerald-400">'Full-Stack Web Developer'</span>,
+                        role: <span class="text-amber-200">'Full-Stack Web Developer'</span>,
                     </p>
                     <p class="pl-4 text-slate-300">
-                        stack: <span class="text-emerald-400">['Astro','Tailwind','C#','.NET']</span>,
+                        stack: <span class="text-amber-200">['Astro','Tailwind','C#','.NET']</span>,
                     </p>
                     <p class="text-slate-500">{'}'};</p>
                     <p class="pt-2 text-slate-500">
@@ -208,33 +208,33 @@ const alternates = getAlternateLinks(lang, path);
 
                 <!-- barra inferior estilo KPIs -->
                 <div class="mt-4 flex flex-wrap items-center gap-3 text-[0.7rem]">
-                    <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-3 py-1">
-                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" />
-                    <span class="text-slate-300">Deploys con CI/CD básico</span>
+                    <div class="flex items-center gap-2 rounded-full border border-brand-royal/40 bg-brand-navy px-3 py-1">
+                    <span class="h-1.5 w-1.5 rounded-full bg-brand-gold" />
+                    <span class="text-slate-200">Deploys con CI/CD básico</span>
                     </div>
-                    <div class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-900 px-3 py-1">
-                    <span class="text-slate-400">+X</span>
-                    <span class="text-slate-300">proyectos productivos</span>
+                    <div class="flex items-center gap-2 rounded-full border border-brand-royal/40 bg-brand-navy px-3 py-1">
+                    <span class="text-slate-300">+X</span>
+                    <span class="text-slate-200">proyectos productivos</span>
                     </div>
                 </div>
             </div>
 
             <!-- tarjetas flotantes estilo template -->
             <div
-                class="pointer-events-none absolute -left-5 -bottom-5 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block animate-float [animation-delay:0.6s]"
+                class="pointer-events-none absolute -left-5 -bottom-5 hidden w-40 rounded-2xl border border-brand-royal/45 bg-brand-navy/95 p-3 text-[0.7rem] text-slate-200 shadow-soft md:block animate-float [animation-delay:0.6s]"
                 >
-                <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-300">
                     Tiempo de respuesta
                 </div>
                 <div class="flex items-baseline gap-1">
-                    <span class="text-lg font-semibold text-emerald-400">24h</span>
+                    <span class="text-lg font-semibold text-brand-gold">24h</span>
                     <span class="text-[0.65rem] text-slate-400">media</span>
                 </div>
             </div>
             <div
-                class="pointer-events-none absolute -right-6 -top-6 hidden w-40 rounded-2xl border border-slate-700 bg-slate-900/95 p-3 text-[0.7rem] text-slate-300 shadow-soft md:block animate-float"
+                class="pointer-events-none absolute -right-6 -top-6 hidden w-40 rounded-2xl border border-brand-royal/45 bg-brand-navy/95 p-3 text-[0.7rem] text-slate-200 shadow-soft md:block animate-float"
                 >
-                <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-400">
+                <div class="mb-1 text-[0.65rem] uppercase tracking-[0.16em] text-slate-300">
                     Tipo de proyectos
                 </div>
                 <ul class="space-y-0.5">
@@ -251,10 +251,10 @@ const alternates = getAlternateLinks(lang, path);
         <ProjectsGrid lang={lang} />
 
         <!-- SOBRE MÍ -->
-        <section id="about" class="relative bg-slate-950 py-16">
+        <section id="about" class="relative bg-brand-ink py-16">
             <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-x-0 top-6 h-32 bg-gradient-to-b from-indigo-500/10 via-transparent to-transparent"
+            class="pointer-events-none absolute inset-x-0 top-6 h-32 bg-gradient-to-b from-brand-royal/15 via-transparent to-transparent"
             />
             <div
             class="relative mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1.3fr)]"
@@ -263,57 +263,57 @@ const alternates = getAlternateLinks(lang, path);
                 <h2 class="text-2xl font-semibold tracking-tight">
                 {t(lang, 'section_about_title')}
                 </h2>
-                <p class="text-sm text-slate-300">
+                <p class="text-sm text-slate-200">
                 {t(lang, 'section_about_p1')}
                 </p>
-                <p class="text-sm text-slate-300">
+                <p class="text-sm text-slate-200">
                 {t(lang, 'section_about_p2')}
                 </p>
             </div>
 
             <!-- “workflow” tipo lista vertical -->
-            <div class="relative space-y-4 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft backdrop-blur">
-                <div class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-indigo-500/20 via-cyan-400/10 to-transparent blur-3xl" />
-                <div class="pointer-events-none absolute -left-6 bottom-0 h-28 w-28 rounded-full bg-fuchsia-500/10 blur-3xl" />
-                <div class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+            <div class="relative space-y-4 overflow-hidden rounded-3xl border border-brand-royal/40 bg-brand-navy/85 p-4 text-xs shadow-soft backdrop-blur">
+                <div class="pointer-events-none absolute -right-10 -top-10 h-32 w-32 rounded-full bg-gradient-to-br from-brand-royal/30 via-brand-gold/18 to-transparent blur-3xl" />
+                <div class="pointer-events-none absolute -left-6 bottom-0 h-28 w-28 rounded-full bg-brand-gold/12 blur-3xl" />
+                <div class="text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-300">
                 Workflow
                 </div>
                 <ol class="space-y-3">
                 <li class="flex gap-3">
                     <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/70 to-cyan-400/70 text-[0.7rem] text-slate-950 shadow-soft"
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold/80 to-amber-200/80 text-[0.7rem] text-brand-ink shadow-soft"
                     >
                     1
                     </div>
                     <div class="space-y-1">
-                    <div class="font-medium text-slate-100">Brief claro y sincero</div>
-                    <p class="text-slate-400">
+                    <div class="font-medium text-slate-50">Brief claro y sincero</div>
+                    <p class="text-slate-300">
                         Entender qué necesitas realmente, qué problema resuelve la web y qué no.
                     </p>
                     </div>
                 </li>
                 <li class="flex gap-3">
                     <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/70 to-cyan-400/70 text-[0.7rem] text-slate-950 shadow-soft"
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold/80 to-amber-200/80 text-[0.7rem] text-brand-ink shadow-soft"
                     >
                     2
                     </div>
                     <div class="space-y-1">
-                    <div class="font-medium text-slate-100">Arquitectura y contenido</div>
-                    <p class="text-slate-400">
+                    <div class="font-medium text-slate-50">Arquitectura y contenido</div>
+                    <p class="text-slate-300">
                         Definir estructura de páginas, secciones y llamadas a la acción antes de tocar código.
                     </p>
                     </div>
                 </li>
                 <li class="flex gap-3">
                     <div
-                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-indigo-500/70 to-cyan-400/70 text-[0.7rem] text-slate-950 shadow-soft"
+                    class="mt-0.5 flex h-6 w-6 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold/80 to-amber-200/80 text-[0.7rem] text-brand-ink shadow-soft"
                     >
                     3
                     </div>
                     <div class="space-y-1">
-                    <div class="font-medium text-slate-100">Implementación y detalles</div>
-                    <p class="text-slate-400">
+                    <div class="font-medium text-slate-50">Implementación y detalles</div>
+                    <p class="text-slate-300">
                         Maquetación, integración y microdetalles de rendimiento y accesibilidad.
                     </p>
                     </div>
@@ -324,47 +324,47 @@ const alternates = getAlternateLinks(lang, path);
         </section>
 
         <!-- STACK estilo tarjetas -->
-        <section id="stack" class="relative bg-slate-950 py-16">
+        <section id="stack" class="relative bg-brand-ink py-16">
             <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-cyan-400/10 via-transparent to-transparent"
+            class="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-brand-royal/18 via-transparent to-transparent"
             />
             <div class="relative mx-auto max-w-content px-4">
             <div class="mb-8 space-y-2">
                 <h2 class="text-2xl font-semibold tracking-tight">
                 {t(lang, 'section_stack_title')}
                 </h2>
-                <p class="text-sm text-slate-400">
+                <p class="text-sm text-slate-300">
                 {t(lang, 'section_stack_subtitle')}
                 </p>
             </div>
 
             <div class="grid gap-4 lg:grid-cols-3">
-                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60 hover:shadow-glow">
-                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                <div class="rounded-3xl border border-brand-royal/35 bg-brand-navy/85 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/60 hover:shadow-glow">
+                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-300">
                     {t(lang, 'stack_frontend_title')}
                 </div>
-                <ul class="space-y-1 text-slate-300">
+                <ul class="space-y-1 text-slate-200">
                     {t(lang, 'stack_frontend_items').split(';').map((item) => (
                     <li>· {item}</li>
                     ))}
                 </ul>
                 </div>
-                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60 hover:shadow-glow">
-                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                <div class="rounded-3xl border border-brand-royal/35 bg-brand-navy/85 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/60 hover:shadow-glow">
+                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-300">
                     {t(lang, 'stack_backend_title')}
                 </div>
-                <ul class="space-y-1 text-slate-300">
+                <ul class="space-y-1 text-slate-200">
                     {t(lang, 'stack_backend_items').split(';').map((item) => (
                     <li>· {item}</li>
                     ))}
                 </ul>
                 </div>
-                <div class="rounded-3xl border border-slate-800 bg-slate-900/80 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/60 hover:shadow-glow">
-                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-400">
+                <div class="rounded-3xl border border-brand-royal/35 bg-brand-navy/85 p-4 text-xs shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/60 hover:shadow-glow">
+                <div class="mb-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-slate-300">
                     {t(lang, 'stack_infra_title')}
                 </div>
-                <ul class="space-y-1 text-slate-300">
+                <ul class="space-y-1 text-slate-200">
                     {t(lang, 'stack_infra_items').split(';').map((item) => (
                     <li>· {item}</li>
                     ))}
@@ -377,11 +377,11 @@ const alternates = getAlternateLinks(lang, path);
         <!-- CONTACTO estilo sección final del template -->
         <section
             id="contact"
-            class="relative bg-gradient-to-t from-slate-950 via-slate-950 to-slate-900 py-16"
+            class="relative bg-gradient-to-t from-brand-ink via-brand-ink to-[#0f1b2f] py-16"
         >
             <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(99,102,241,0.12),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.12),transparent_30%)]"
+            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,178,94,0.16),transparent_32%),radial-gradient(circle_at_78%_12%,rgba(31,63,112,0.22),transparent_32%)]"
             />
             <div
             class="relative mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1.2fr)]"
@@ -390,16 +390,16 @@ const alternates = getAlternateLinks(lang, path);
                 <h2 class="text-2xl font-semibold tracking-tight">
                 {t(lang, 'section_contact_title')}
                 </h2>
-                <p class="text-sm text-slate-300">
+                <p class="text-sm text-slate-200">
                 {t(lang, 'section_contact_subtitle')}
                 </p>
-                <p class="text-sm text-slate-300">
+                <p class="text-sm text-slate-200">
                 {t(lang, 'section_contact_intro1')}
                 </p>
-                <p class="text-sm text-slate-300">
+                <p class="text-sm text-slate-200">
                 {t(lang, 'section_contact_intro2')}
                 </p>
-                <ul class="list-disc space-y-1 pl-4 text-xs text-slate-300">
+                <ul class="list-disc space-y-1 pl-4 text-xs text-slate-200">
                 <li>{t(lang, 'section_contact_item1')}</li>
                 <li>{t(lang, 'section_contact_item2')}</li>
                 <li>{t(lang, 'section_contact_item3')}</li>
@@ -407,12 +407,12 @@ const alternates = getAlternateLinks(lang, path);
             </div>
 
             <form
-                class="relative space-y-3 overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/90 p-5 text-xs shadow-glow backdrop-blur"
+                class="relative space-y-3 overflow-hidden rounded-3xl border border-brand-royal/40 bg-brand-navy/90 p-5 text-xs shadow-glow backdrop-blur"
                 action="mailto:TU_EMAIL_AQUI"
                 method="post"
                 enctype="text/plain"
             >
-                <div class="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_30%_10%,rgba(99,102,241,0.15),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(45,212,191,0.12),transparent_32%)] opacity-80" />
+                <div class="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_30%_10%,rgba(214,178,94,0.22),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(31,63,112,0.2),transparent_32%)] opacity-80" />
                 <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom_right,rgba(255,255,255,0.05),transparent)]" />
                 <div class="flex flex-col gap-1">
                 <label class="text-slate-200" for="name">
@@ -423,7 +423,7 @@ const alternates = getAlternateLinks(lang, path);
                     name="name"
                     type="text"
                     required
-                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-indigo-300 focus:ring-2 focus:ring-indigo-400/50"
+                    class="rounded-xl border border-brand-royal/40 bg-brand-ink px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-brand-gold/60 focus:ring-2 focus:ring-brand-gold/50"
                 />
                 </div>
                 <div class="flex flex-col gap-1">
@@ -435,7 +435,7 @@ const alternates = getAlternateLinks(lang, path);
                     name="email"
                     type="email"
                     required
-                    class="rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-indigo-300 focus:ring-2 focus:ring-indigo-400/50"
+                    class="rounded-xl border border-brand-royal/40 bg-brand-ink px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-brand-gold/60 focus:ring-2 focus:ring-brand-gold/50"
                 />
                 </div>
                 <div class="flex flex-col gap-1">
@@ -447,19 +447,19 @@ const alternates = getAlternateLinks(lang, path);
                     name="message"
                     rows="4"
                     required
-                    class="resize-none rounded-xl border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-indigo-300 focus:ring-2 focus:ring-indigo-400/50"
+                    class="resize-none rounded-xl border border-brand-royal/40 bg-brand-ink px-3 py-2 text-xs text-slate-100 outline-none transition focus:border-brand-gold/60 focus:ring-2 focus:ring-brand-gold/50"
                 />
                 </div>
                 <button
                 type="submit"
-                class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-indigo-500 via-cyan-400 to-emerald-300 px-5 py-2 text-xs font-semibold text-slate-950 shadow-glow transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-indigo-400/70 focus:ring-offset-1 focus:ring-offset-slate-950"
+                class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-brand-gold via-amber-200 to-brand-cream px-5 py-2 text-xs font-semibold text-brand-ink shadow-glow transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:ring-offset-1 focus:ring-offset-brand-ink"
                 >
                 <span
                     aria-hidden="true"
-                    class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.45),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.2),transparent_35%)] opacity-0 transition duration-500 group-hover:opacity-90"
+                    class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.35),transparent_35%),radial-gradient(circle_at_80%_10%,rgba(255,255,255,0.2),transparent_35%)] opacity-0 transition duration-500 group-hover:opacity-90"
                 />
                 <span class="relative flex items-center gap-2">
-                    <span class="h-1.5 w-1.5 rounded-full bg-slate-900/50" />
+                    <span class="h-1.5 w-1.5 rounded-full bg-brand-ink/50" />
                     {t(lang, 'contact_submit')}
                 </span>
                 </button>

@@ -13,33 +13,33 @@ const { lang } = Astro.props as Props;
     class="pointer-events-auto fixed inset-x-0 bottom-0 z-50 hidden justify-center px-4 pb-4"
     >
     <div
-        class="max-w-content w-full rounded-2xl bg-slate-900/95 p-4 shadow-soft border border-slate-700"
+        class="max-w-content w-full rounded-2xl border border-brand-royal/50 bg-brand-navy/95 p-4 shadow-soft"
     >
         <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <div class="space-y-1 text-sm">
             <div class="font-semibold text-slate-100">
             {t(lang, 'cookies_banner_title')}
             </div>
-            <p class="text-xs text-slate-300">
+            <p class="text-xs text-slate-200">
             {t(lang, 'cookies_banner_text')}
             </p>
         </div>
         <div class="flex flex-wrap gap-2 text-xs">
             <a
             href={`/${lang}/legal/cookies`}
-            class="rounded-full border border-slate-600 px-3 py-1 text-slate-200 hover:bg-slate-800"
+            class="rounded-full border border-brand-royal/50 px-3 py-1 text-slate-100 hover:bg-brand-ink"
             >
             {t(lang, 'cookies_more_info')}
             </a>
             <button
             id="cookie-necessary"
-            class="rounded-full border border-slate-600 px-3 py-1 text-slate-200 hover:bg-slate-800"
+            class="rounded-full border border-brand-royal/50 px-3 py-1 text-slate-100 hover:bg-brand-ink"
             >
             {t(lang, 'cookies_accept_necessary')}
             </button>
             <button
             id="cookie-all"
-            class="rounded-full bg-gradient-to-r from-indigo-500 to-cyan-400 px-3 py-1 font-medium text-slate-950 hover:brightness-105"
+            class="rounded-full bg-gradient-to-r from-brand-gold to-brand-royal px-3 py-1 font-medium text-brand-ink hover:brightness-105"
             >
             {t(lang, 'cookies_accept_all')}
             </button>

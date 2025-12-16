@@ -4,9 +4,11 @@ export default {
     theme: {
         extend: {
             colors: {
-                bg: '#020617',
-                'bg-alt': '#020617',
-                accent: '#6366f1'
+                'brand-ink': '#0b1220',
+                'brand-navy': '#102039',
+                'brand-royal': '#1f3f70',
+                'brand-gold': '#d6b25e',
+                'brand-cream': '#f1e4c3'
             },
             maxWidth: {
                 content: '1120px'

@@ -16,11 +16,11 @@ const MENU_LINKS: Array<{ key: string; href: string }> = [
 ];
 ---
 
-<footer class="border-t border-slate-800 bg-slate-950 py-6">
+<footer class="border-t border-brand-royal/50 bg-brand-ink py-6">
     <div
         class="mx-auto flex max-w-content flex-col gap-4 px-4 text-sm text-slate-300 md:flex-row md:items-center md:justify-between"
     >
-        <div class="flex flex-col gap-1 text-[0.85rem] text-slate-400">
+        <div class="flex flex-col gap-1 text-[0.85rem] text-slate-300">
             <span class="text-sm font-semibold uppercase tracking-wide text-slate-100">Samuel Galpe</span>
             <span>
                 © {new Date().getFullYear()} Samuel Galpe. {t(lang, 'footer_rights')}
@@ -29,20 +29,20 @@ const MENU_LINKS: Array<{ key: string; href: string }> = [
 
         <nav class="flex flex-wrap justify-center gap-4 text-sm text-slate-200">
             {MENU_LINKS.map((link) => (
-                <a href={link.href} class="transition hover:text-slate-50">
+                <a href={link.href} class="transition hover:text-amber-200">
                     {t(lang, link.key)}
                 </a>
             ))}
         </nav>
 
-        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.8rem] text-slate-400">
-            <a href={`/${lang}/legal/cookies`} class="hover:text-slate-200">
+        <div class="flex flex-wrap items-center justify-center gap-3 text-[0.8rem] text-slate-300">
+            <a href={`/${lang}/legal/cookies`} class="hover:text-amber-200">
                 {t(lang, 'nav_cookies')}
             </a>
-            <a href={`/${lang}/legal/privacy`} class="hover:text-slate-200">
+            <a href={`/${lang}/legal/privacy`} class="hover:text-amber-200">
                 {t(lang, 'nav_privacy')}
             </a>
-            <a href="#top" class="hover:text-slate-200">
+            <a href="#top" class="hover:text-amber-200">
                 {t(lang, 'footer_back_to_top')}
             </a>
         </div>
