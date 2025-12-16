@@ -8,8 +8,8 @@ import { t, DEFAULT_LANG, type ActiveLang, getAlternateLinks } from '../i18n';
 
 const { lang: paramLang } = Astro.params;
 const lang = (paramLang as ActiveLang) ?? DEFAULT_LANG;
-const path = '/';
-const alternates = getAlternateLinks(lang, path);
+const pagePath = '/';
+const alternates = getAlternateLinks(lang, pagePath);
 
 const principles = [
     {
@@ -86,7 +86,7 @@ const principleIcons = {
     </head>
     <body class="bg-brand-ink text-slate-50 antialiased selection:bg-amber-200/25 selection:text-amber-50">
         <CookieBanner lang={lang} />
-        <Nav lang={lang} path={path} />
+        <Nav lang={lang} path={pagePath} />
 
         <main class="relative overflow-hidden">
         <div

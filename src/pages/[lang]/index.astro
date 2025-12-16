@@ -11,8 +11,8 @@ export function getStaticPaths() {
 }
 
 const lang = Astro.params.lang as ActiveLang;
-const path = '/';
-const alternates = getAlternateLinks(lang, path);
+const pagePath = '/';
+const alternates = getAlternateLinks(lang, pagePath);
 
 const principles = [
     {
@@ -89,7 +89,7 @@ const principleIcons = {
     </head>
     <body class="bg-brand-ink text-slate-50">
         <CookieBanner lang={lang} />
-        <Nav lang={lang} path={path} />
+        <Nav lang={lang} path={pagePath} />
 
         <main>
         <!-- HERO -->
