@@ -6,6 +6,8 @@ export interface Project {
     type: string;
     year: string;
     tech: string[];
+    // Ruta a la captura de la home (guardar las imágenes en /public/projects)
+    screenshot: string;
     liveUrl?: string;
     codeUrl?: string;
     description: Record<ActiveLang, string>;
@@ -18,6 +20,7 @@ export const projects: Project[] = [
         type: 'Web corporativa',
         year: '2025',
         tech: ['Astro', 'Tailwind', 'TypeScript'],
+        screenshot: '/projects/auris-home.jpg',
         liveUrl: 'https://TU_URL_AURIS',
         codeUrl: 'https://github.com/SamuOnDev/auris-web',
         description: {
@@ -31,6 +34,7 @@ export const projects: Project[] = [
         type: 'Portfolio personal',
         year: '2025',
         tech: ['Astro', 'Tailwind', 'TypeScript'],
+        screenshot: '/projects/portfolio-home.jpg',
         liveUrl: 'https://TU_URL_PORTFOLIO',
         codeUrl: 'https://github.com/TU_USER/portfolio-samugalpe',
         description: {

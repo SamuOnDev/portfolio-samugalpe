@@ -35,75 +35,79 @@ const { lang } = Astro.props as Props;
         <div class="grid gap-6 lg:grid-cols-2">
         {projects.map((p) => (
             <article
-            class="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/70 hover:shadow-glow"
+            class="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-950/80 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/70 hover:shadow-glow"
             >
             <div
                 aria-hidden="true"
-                class="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100"
+                class="pointer-events-none absolute inset-3 z-0 overflow-hidden rounded-2xl border border-white/5 bg-slate-900/70"
+                style={`background-image: linear-gradient(to bottom, rgba(7, 11, 23, 0.78), rgba(7, 11, 23, 0.92)), url(${p.screenshot}); background-size: cover; background-position: center;`}
+            />
+            <div
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 z-10 opacity-0 transition duration-500 group-hover:opacity-100"
             >
                 <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-cyan-400/10 to-amber-400/10 blur-2xl" />
             </div>
-            {/* “screenshot” placeholder */}
-            <div class="relative h-40 overflow-hidden bg-slate-900">
-                <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_25%_28%,rgba(99,102,241,0.32),transparent_62%),_radial-gradient(circle_at_78%_26%,rgba(34,211,238,0.28),transparent_60%),_radial-gradient(circle_at_46%_82%,rgba(16,185,129,0.24),transparent_62%)] bg-[length:260%_260%] bg-[position:50%_50%] opacity-70 animate-shimmer"
-                />
-                <div class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl bg-slate-950/80 px-3 py-1.5 text-[0.7rem] text-slate-200 shadow-soft">
-                <span class="truncate">
-                    {p.tech.join(' · ')}
-                </span>
-                <span class="rounded-full bg-slate-800 px-2 py-0.5 text-[0.65rem] text-slate-300">
-                    {p.year}
-                </span>
-                </div>
-            </div>
 
-            {/* contenido */}
-            <div class="flex flex-1 flex-col gap-3 p-4">
+            <div class="relative z-20 flex h-full flex-col">
+                <div class="relative h-40 overflow-hidden rounded-2xl bg-slate-950/70">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_25%_28%,rgba(99,102,241,0.32),transparent_62%),_radial-gradient(circle_at_78%_26%,rgba(34,211,238,0.28),transparent_60%),_radial-gradient(circle_at_46%_82%,rgba(16,185,129,0.24),transparent_62%)] bg-[length:260%_260%] bg-[position:50%_50%] opacity-70 animate-shimmer" />
+                <div class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl bg-slate-950/80 px-3 py-1.5 text-[0.7rem] text-slate-200 shadow-soft">
+                    <span class="truncate">
+                    {p.tech.join(' · ')}
+                    </span>
+                    <span class="rounded-full bg-slate-800 px-2 py-0.5 text-[0.65rem] text-slate-300">
+                    {p.year}
+                    </span>
+                </div>
+                </div>
+
+                <div class="flex flex-1 flex-col gap-3 p-4">
                 <div class="flex items-start justify-between gap-3">
-                <div class="space-y-1">
+                    <div class="space-y-1">
                     <div class="text-sm font-semibold text-slate-50">
-                    {p.name}
+                        {p.name}
                     </div>
                     <div class="inline-flex items-center rounded-full bg-slate-800/80 px-2.5 py-0.5 text-[0.65rem] text-slate-200">
-                    {p.type}
+                        {p.type}
                     </div>
-                </div>
+                    </div>
                 </div>
 
                 <p class="text-xs text-slate-300">
-                {p.description[lang]}
+                    {p.description[lang]}
                 </p>
 
                 <div class="mt-auto flex items-center justify-between pt-1 text-[0.7rem] text-slate-400">
-                <div class="flex flex-wrap gap-1">
+                    <div class="flex flex-wrap gap-1">
                     {p.tech.slice(0, 3).map((tag) => (
-                    <span class="rounded-full bg-slate-800 px-2 py-0.5">
+                        <span class="rounded-full bg-slate-800 px-2 py-0.5">
                         {tag}
-                    </span>
+                        </span>
                     ))}
-                </div>
-                <div class="flex gap-3 text-[0.7rem]">
+                    </div>
+                    <div class="flex gap-3 text-[0.7rem]">
                     {p.liveUrl && (
-                    <a
+                        <a
                         href={p.liveUrl}
                         target="_blank"
                         rel="noreferrer"
                         class="text-indigo-300 hover:text-indigo-100"
-                    >
+                        >
                         Ver web
-                    </a>
+                        </a>
                     )}
                     {p.codeUrl && (
-                    <a
+                        <a
                         href={p.codeUrl}
                         target="_blank"
                         rel="noreferrer"
                         class="text-slate-300 hover:text-slate-100"
-                    >
+                        >
                         Código
-                    </a>
+                        </a>
                     )}
+                    </div>
                 </div>
                 </div>
             </div>
