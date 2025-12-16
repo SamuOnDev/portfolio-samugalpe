@@ -28,7 +28,7 @@ const { lang } = Astro.props as Props;
             </p>
         </div>
         <div class="text-[0.7rem] text-slate-400">
-            {projects.length} proyectos · Astro / Tailwind / .NET / más
+            {t(lang, 'section_projects_meta').replace('{count}', projects.length.toString())}
         </div>
         </div>
 

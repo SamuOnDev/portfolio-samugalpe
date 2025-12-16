@@ -33,6 +33,7 @@
 
     "section_projects_title": "Selected projects",
     "section_projects_subtitle": "A selection of real websites I've worked on.",
+    "section_projects_meta": "{count} projects · Astro / Tailwind / .NET / more",
     "section_about_title": "About me",
     "section_about_p1": "I’m a full stack web developer. I focus on shipping clear, fast and easy-to-maintain websites, avoiding unnecessary dependencies.",
     "section_about_p2": "I’m comfortable in both frontend and backend, and I like to understand what is happening in every layer of the project.",
