@@ -27,15 +27,15 @@ export const projects: Project[] = [
     },
     {
         id: 'portfolio',
-        name: 'Portfolio samugalpe',
+        name: 'Portfolio Samuel Galpe',
         type: 'Portfolio personal',
         year: '2025',
         tech: ['Astro', 'Tailwind', 'TypeScript'],
         liveUrl: 'https://TU_URL_PORTFOLIO',
-        codeUrl: 'https://github.com/TU_USER/portfolio-samugalpe',
+        codeUrl: 'https://github.com/TU_USER/portfolio-samuel-galpe',
         description: {
-        es: 'Portfolio personal para presentar proyectos web con diseño limpio y modo oscuro.',
-        en: 'Personal portfolio to showcase web projects, with a clean design and dark theme.'
+        es: 'Portfolio personal de Samuel Galpe para presentar proyectos web con diseño limpio y modo oscuro.',
+        en: 'Personal portfolio by Samuel Galpe to showcase web projects, with a clean design and dark theme.'
         }
     }
   // Añade más proyectos aquí
