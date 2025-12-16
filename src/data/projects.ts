@@ -20,7 +20,7 @@ export const projects: Project[] = [
         type: 'Web corporativa',
         year: '2025',
         tech: ['Astro', 'Tailwind', 'TypeScript'],
-        screenshot: '/projects/auris-home.jpg',
+        screenshot: '/projects/auris-home.png',
         liveUrl: 'https://TU_URL_AURIS',
         codeUrl: 'https://github.com/SamuOnDev/auris-web',
         description: {

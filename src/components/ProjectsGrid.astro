@@ -37,11 +37,7 @@ const { lang } = Astro.props as Props;
             <article
             class="group relative flex flex-col overflow-hidden rounded-3xl border border-brand-royal/40 bg-brand-navy/85 shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/70 hover:shadow-glow"
             >
-            <div
-                aria-hidden="true"
-                class="pointer-events-none absolute inset-3 z-0 overflow-hidden rounded-2xl border border-white/5 bg-slate-900/70"
-                style={`background-image: linear-gradient(to bottom, rgba(7, 11, 23, 0.78), rgba(7, 11, 23, 0.92)), url(${p.screenshot}); background-size: cover; background-position: center;`}
-            />
+            
             <div
                 aria-hidden="true"
                 class="pointer-events-none absolute inset-0 z-10 opacity-0 transition duration-500 group-hover:opacity-100"
@@ -52,6 +48,11 @@ const { lang } = Astro.props as Props;
             <div class="relative h-40 overflow-hidden bg-brand-ink">
                 <div
                 class="absolute inset-0 bg-[radial-gradient(circle_at_25%_28%,rgba(214,178,94,0.3),transparent_62%),_radial-gradient(circle_at_78%_26%,rgba(31,63,112,0.28),transparent_60%),_radial-gradient(circle_at_46%_82%,rgba(17,38,70,0.22),transparent_62%)] bg-[length:260%_260%] bg-[position:50%_50%] opacity-70 animate-shimmer"
+                />
+                <div
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-3 z-0 overflow-hidden rounded-2xl border border-white/5 bg-slate-900/70"
+                style={`background-image: linear-gradient(to bottom, rgba(7, 11, 23, 0.78), rgba(7, 11, 23, 0.92)), url(${p.screenshot}); background-size: cover; background-position: top;`}
                 />
                 <div class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl bg-brand-ink/85 px-3 py-1.5 text-[0.7rem] text-slate-200 shadow-soft">
                 <span class="truncate">
