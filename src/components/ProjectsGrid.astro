@@ -9,10 +9,10 @@ interface Props {
 const { lang } = Astro.props as Props;
 ---
 
-<section id="projects" class="relative bg-slate-950 pb-16 pt-6">
+<section id="projects" class="relative bg-brand-ink pb-16 pt-6">
     <div
         aria-hidden="true"
-        class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/5 via-indigo-500/5 to-transparent"
+        class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/8 via-brand-royal/12 to-transparent"
     />
     <div class="mx-auto max-w-content px-4">
         <div class="mb-8 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
@@ -35,24 +35,24 @@ const { lang } = Astro.props as Props;
         <div class="grid gap-6 lg:grid-cols-2">
         {projects.map((p) => (
             <article
-            class="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/80 shadow-soft transition hover:-translate-y-1 hover:border-indigo-400/70 hover:shadow-glow"
+            class="group relative flex flex-col overflow-hidden rounded-3xl border border-brand-royal/40 bg-brand-navy/85 shadow-soft transition hover:-translate-y-1 hover:border-brand-gold/70 hover:shadow-glow"
             >
             <div
                 aria-hidden="true"
                 class="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100"
             >
-                <div class="absolute inset-0 bg-gradient-to-br from-indigo-500/10 via-cyan-400/10 to-amber-400/10 blur-2xl" />
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-gold/14 via-brand-royal/18 to-brand-cream/10 blur-2xl" />
             </div>
             {/* “screenshot” placeholder */}
-            <div class="relative h-40 overflow-hidden bg-slate-900">
+            <div class="relative h-40 overflow-hidden bg-brand-ink">
                 <div
-                class="absolute inset-0 bg-[radial-gradient(circle_at_25%_28%,rgba(99,102,241,0.32),transparent_62%),_radial-gradient(circle_at_78%_26%,rgba(34,211,238,0.28),transparent_60%),_radial-gradient(circle_at_46%_82%,rgba(16,185,129,0.24),transparent_62%)] bg-[length:260%_260%] bg-[position:50%_50%] opacity-70 animate-shimmer"
+                class="absolute inset-0 bg-[radial-gradient(circle_at_25%_28%,rgba(214,178,94,0.3),transparent_62%),_radial-gradient(circle_at_78%_26%,rgba(31,63,112,0.28),transparent_60%),_radial-gradient(circle_at_46%_82%,rgba(17,38,70,0.22),transparent_62%)] bg-[length:260%_260%] bg-[position:50%_50%] opacity-70 animate-shimmer"
                 />
-                <div class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl bg-slate-950/80 px-3 py-1.5 text-[0.7rem] text-slate-200 shadow-soft">
+                <div class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-xl bg-brand-ink/85 px-3 py-1.5 text-[0.7rem] text-slate-200 shadow-soft">
                 <span class="truncate">
                     {p.tech.join(' · ')}
                 </span>
-                <span class="rounded-full bg-slate-800 px-2 py-0.5 text-[0.65rem] text-slate-300">
+                <span class="rounded-full bg-brand-navy px-2 py-0.5 text-[0.65rem] text-slate-200">
                     {p.year}
                 </span>
                 </div>
@@ -65,20 +65,20 @@ const { lang } = Astro.props as Props;
                     <div class="text-sm font-semibold text-slate-50">
                     {p.name}
                     </div>
-                    <div class="inline-flex items-center rounded-full bg-slate-800/80 px-2.5 py-0.5 text-[0.65rem] text-slate-200">
+                    <div class="inline-flex items-center rounded-full bg-brand-royal/30 px-2.5 py-0.5 text-[0.65rem] text-slate-100">
                     {p.type}
                     </div>
                 </div>
                 </div>
 
-                <p class="text-xs text-slate-300">
+                <p class="text-xs text-slate-200">
                 {p.description[lang]}
                 </p>
 
-                <div class="mt-auto flex items-center justify-between pt-1 text-[0.7rem] text-slate-400">
+                <div class="mt-auto flex items-center justify-between pt-1 text-[0.7rem] text-slate-300">
                 <div class="flex flex-wrap gap-1">
                     {p.tech.slice(0, 3).map((tag) => (
-                    <span class="rounded-full bg-slate-800 px-2 py-0.5">
+                    <span class="rounded-full bg-brand-navy px-2 py-0.5">
                         {tag}
                     </span>
                     ))}
@@ -89,7 +89,7 @@ const { lang } = Astro.props as Props;
                         href={p.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        class="text-indigo-300 hover:text-indigo-100"
+                        class="text-brand-gold hover:text-amber-200"
                     >
                         Ver web
                     </a>
@@ -99,7 +99,7 @@ const { lang } = Astro.props as Props;
                         href={p.codeUrl}
                         target="_blank"
                         rel="noreferrer"
-                        class="text-slate-300 hover:text-slate-100"
+                        class="text-slate-200 hover:text-slate-50"
                     >
                         Código
                     </a>
