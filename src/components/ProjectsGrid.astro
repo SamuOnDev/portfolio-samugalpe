@@ -39,7 +39,12 @@ const { lang } = Astro.props as Props;
             >
             <div
                 aria-hidden="true"
-                class="pointer-events-none absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100"
+                class="pointer-events-none absolute inset-3 z-0 overflow-hidden rounded-2xl border border-white/5 bg-slate-900/70"
+                style={`background-image: linear-gradient(to bottom, rgba(7, 11, 23, 0.78), rgba(7, 11, 23, 0.92)), url(${p.screenshot}); background-size: cover; background-position: center;`}
+            />
+            <div
+                aria-hidden="true"
+                class="pointer-events-none absolute inset-0 z-10 opacity-0 transition duration-500 group-hover:opacity-100"
             >
                 <div class="absolute inset-0 bg-gradient-to-br from-brand-gold/14 via-brand-royal/18 to-brand-cream/10 blur-2xl" />
             </div>
@@ -54,21 +59,19 @@ const { lang } = Astro.props as Props;
                 </span>
                 <span class="rounded-full bg-brand-navy px-2 py-0.5 text-[0.65rem] text-slate-200">
                     {p.year}
-                </span>
+                    </span>
                 </div>
-            </div>
+                </div>
 
-            {/* contenido */}
-            <div class="flex flex-1 flex-col gap-3 p-4">
+                <div class="flex flex-1 flex-col gap-3 p-4">
                 <div class="flex items-start justify-between gap-3">
-                <div class="space-y-1">
+                    <div class="space-y-1">
                     <div class="text-sm font-semibold text-slate-50">
-                    {p.name}
+                        {p.name}
                     </div>
                     <div class="inline-flex items-center rounded-full bg-brand-royal/30 px-2.5 py-0.5 text-[0.65rem] text-slate-100">
                     {p.type}
                     </div>
-                </div>
                 </div>
 
                 <p class="text-xs text-slate-200">
@@ -80,30 +83,31 @@ const { lang } = Astro.props as Props;
                     {p.tech.slice(0, 3).map((tag) => (
                     <span class="rounded-full bg-brand-navy px-2 py-0.5">
                         {tag}
-                    </span>
+                        </span>
                     ))}
-                </div>
-                <div class="flex gap-3 text-[0.7rem]">
+                    </div>
+                    <div class="flex gap-3 text-[0.7rem]">
                     {p.liveUrl && (
-                    <a
+                        <a
                         href={p.liveUrl}
                         target="_blank"
                         rel="noreferrer"
                         class="text-brand-gold hover:text-amber-200"
                     >
                         Ver web
-                    </a>
+                        </a>
                     )}
                     {p.codeUrl && (
-                    <a
+                        <a
                         href={p.codeUrl}
                         target="_blank"
                         rel="noreferrer"
                         class="text-slate-200 hover:text-slate-50"
                     >
                         Código
-                    </a>
+                        </a>
                     )}
+                    </div>
                 </div>
                 </div>
             </div>
