@@ -22,18 +22,20 @@ const LINKS: Array<{ key: string; href: string }> = [
     class="sticky top-0 z-40 border-b border-brand-royal/50 bg-brand-ink/80 backdrop-blur-xl"
     >
     <div class="mx-auto flex max-w-content items-center justify-between px-4 py-5">
-        <a href={`/${lang}/`} class="flex items-center gap-2">
-        <div
-            class="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-brand-royal text-xs font-bold text-brand-ink"
-        >
-            SG
-        </div>
-        <div class="flex flex-col text-sm md:text-base">
-            <span class="text-lg font-semibold leading-tight tracking-wide">Samuel Galpe</span>
-            <span class="text-[0.7rem] text-slate-400 md:text-xs">
-            Full-Stack Web Developer
-            </span>
-        </div>
+        <a href={`/${lang}/`} class="flex items-center gap-3">
+            <div class="flex flex-col text-sm md:text-base">
+                <span class="text-lg leading-tight tracking-wide text-brand-gold md:text-xl">
+                    <span class="font-normal">Samuel</span> <span class="font-semibold">Galpe</span>
+                </span>
+                <span class="text-[0.7rem] text-slate-400 md:text-xs">
+                    Full-Stack Web Developer
+                </span>
+            </div>
+            <div
+                class="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-brand-gold to-brand-royal text-[0.7rem] font-semibold text-brand-ink shadow-glow"
+            >
+                SG
+            </div>
         </a>
 
         <nav class="hidden gap-6 text-sm font-semibold text-slate-300 md:flex md:text-base">
