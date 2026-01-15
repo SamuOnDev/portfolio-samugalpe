@@ -29,20 +29,20 @@ const MENU_LINKS: Array<{ key: string; href: string }> = [
 
         <nav class="flex flex-wrap justify-center gap-4 text-sm text-slate-200">
             {MENU_LINKS.map((link) => (
-                <a href={link.href} class="transition hover:text-amber-200">
+                <a href={link.href} class="transition hover:text-brand-cream">
                     {t(lang, link.key)}
                 </a>
             ))}
         </nav>
 
         <div class="flex flex-wrap items-center justify-center gap-3 text-[0.8rem] text-slate-300">
-            <a href={`/${lang}/legal/cookies`} class="hover:text-amber-200">
+            <a href={`/${lang}/legal/cookies`} class="hover:text-brand-cream">
                 {t(lang, 'nav_cookies')}
             </a>
-            <a href={`/${lang}/legal/privacy`} class="hover:text-amber-200">
+            <a href={`/${lang}/legal/privacy`} class="hover:text-brand-cream">
                 {t(lang, 'nav_privacy')}
             </a>
-            <a href="#top" class="hover:text-amber-200">
+            <a href="#top" class="hover:text-brand-cream">
                 {t(lang, 'footer_back_to_top')}
             </a>
         </div>

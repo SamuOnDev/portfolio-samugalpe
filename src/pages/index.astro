@@ -50,14 +50,14 @@ const principles = [
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     </head>
-    <body class="bg-brand-ink text-slate-50 antialiased selection:bg-amber-200/25 selection:text-amber-50">
+    <body class="bg-brand-ink text-slate-50 antialiased selection:bg-brand-cream/25 selection:text-brand-cream">
         <CookieBanner lang={lang} />
         <Nav lang={lang} path={pagePath} />
 
         <main class="relative overflow-hidden">
         <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_22%,rgba(214,178,94,0.18),transparent_32%),radial-gradient(circle_at_82%_0%,rgba(45,45,45,0.28),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(20,20,24,0.22),transparent_38%)]"
+            class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_22%,rgba(47,183,161,0.18),transparent_32%),radial-gradient(circle_at_82%_0%,rgba(45,45,45,0.28),transparent_30%),radial-gradient(circle_at_50%_80%,rgba(20,20,24,0.22),transparent_38%)]"
         />
         <div
             aria-hidden="true"
@@ -116,7 +116,7 @@ const principles = [
                 <div class="flex flex-wrap items-center gap-3">
                 <a
                     href="#projects"
-                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-brand-gold via-amber-200 to-brand-cream px-5 py-2 text-sm font-semibold text-brand-ink shadow-glow transition focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:ring-offset-1 focus:ring-offset-brand-ink"
+                    class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-brand-gold via-brand-cream to-brand-royal px-5 py-2 text-sm font-semibold text-brand-ink shadow-glow transition focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:ring-offset-1 focus:ring-offset-brand-ink"
                 >
                     <span
                     aria-hidden="true"
@@ -178,7 +178,7 @@ const principles = [
                 >
                 <div
                     aria-hidden="true"
-                    class="pointer-events-none absolute -inset-16 -z-10 bg-[conic-gradient(at_top_right,_rgba(214,178,94,0.28),rgba(160,160,160,0.18),rgba(255,255,255,0.12),rgba(214,178,94,0.28))] opacity-40 blur-3xl"
+                    class="pointer-events-none absolute -inset-16 -z-10 bg-[conic-gradient(at_top_right,_rgba(47,183,161,0.28),rgba(160,160,160,0.18),rgba(255,255,255,0.12),rgba(47,183,161,0.28))] opacity-40 blur-3xl"
                 />
                 <div class="pointer-events-none absolute inset-x-4 top-4 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
                 <!-- pestañas code/preview estilo template -->
@@ -201,8 +201,8 @@ const principles = [
                     class="relative overflow-hidden rounded-2xl border border-brand-royal/40 bg-gradient-to-tr from-brand-navy via-brand-ink to-brand-ink"
                 >
                     <div class="flex items-center gap-1 border-b border-brand-royal/40 px-3 py-2">
-                    <span class="h-2 w-2 rounded-full bg-red-500" />
-                    <span class="h-2 w-2 rounded-full bg-amber-400" />
+                    <span class="h-2 w-2 rounded-full bg-brand-cream" />
+                    <span class="h-2 w-2 rounded-full bg-brand-gold" />
                     <span class="h-2 w-2 rounded-full bg-brand-gold" />
                     <span class="ml-2 text-[0.7rem] text-slate-400">
                         portfolio-samuel-galpe.astro
@@ -215,13 +215,13 @@ const principles = [
                         <span class="text-slate-300">=</span> {'{'}
                     </p>
                     <p class="pl-4 text-slate-300">
-                        name: <span class="text-amber-200">'Samuel Galpe'</span>,
+                        name: <span class="text-brand-cream">'Samuel Galpe'</span>,
                     </p>
                     <p class="pl-4 text-slate-300">
-                        role: <span class="text-amber-200">'Full-Stack Web Developer'</span>,
+                        role: <span class="text-brand-cream">'Full-Stack Web Developer'</span>,
                     </p>
                     <p class="pl-4 text-slate-300">
-                        stack: <span class="text-amber-200">['Astro','Tailwind','C#','.NET']</span>,
+                        stack: <span class="text-brand-cream">['Astro','Tailwind','C#','.NET']</span>,
                     </p>
                     <p class="text-slate-500">{'}'};</p>
                     <p class="pt-2 text-slate-500">
@@ -301,7 +301,7 @@ const principles = [
                 <div
                     class="group relative flex items-center gap-3 overflow-hidden rounded-full border border-brand-royal/45 bg-gradient-to-r from-brand-navy/90 via-brand-ink to-brand-navy/90 px-3 py-3 shadow-soft ring-1 ring-white/5 transition hover:-translate-y-0.5 hover:border-brand-gold/60"
                 >
-                    <div class="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-amber-200/80 via-brand-gold/70 to-brand-cream/70 text-brand-ink shadow-glow">
+                    <div class="relative flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-brand-cream/80 via-brand-gold/70 to-brand-royal/60 text-brand-ink shadow-glow">
                     <span class="absolute inset-0 rounded-full bg-white/30 opacity-0 transition group-hover:opacity-30" />
                     {principle.icon === 'rocket' && (
                         <svg viewBox="0 0 24 24" class="h-5 w-5 text-brand-ink" aria-hidden="true">
@@ -404,7 +404,7 @@ const principles = [
         >
             <div
             aria-hidden="true"
-            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(214,178,94,0.16),transparent_32%),radial-gradient(circle_at_78%_12%,rgba(50,50,50,0.24),transparent_32%)]"
+            class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(47,183,161,0.16),transparent_32%),radial-gradient(circle_at_78%_12%,rgba(50,50,50,0.24),transparent_32%)]"
             />
             <div
             class="relative mx-auto grid max-w-content gap-10 px-4 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1.2fr)]"
@@ -435,7 +435,7 @@ const principles = [
                 method="post"
                 enctype="text/plain"
             >
-                <div class="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_30%_10%,rgba(214,178,94,0.22),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(48,48,48,0.2),transparent_32%)] opacity-80" />
+                <div class="pointer-events-none absolute -inset-10 bg-[radial-gradient(circle_at_30%_10%,rgba(47,183,161,0.22),transparent_35%),radial-gradient(circle_at_80%_80%,rgba(48,48,48,0.2),transparent_32%)] opacity-80" />
                 <div class="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom_right,rgba(255,255,255,0.05),transparent)]" />
                 <div class="flex flex-col gap-1">
                 <label class="text-slate-200" for="name">
@@ -475,7 +475,7 @@ const principles = [
                 </div>
                 <button
                 type="submit"
-                class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-brand-gold via-amber-200 to-brand-cream px-5 py-2 text-xs font-semibold text-brand-ink shadow-glow transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:ring-offset-1 focus:ring-offset-brand-ink"
+                class="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-gradient-to-r from-brand-gold via-brand-cream to-brand-royal px-5 py-2 text-xs font-semibold text-brand-ink shadow-glow transition hover:brightness-105 focus:outline-none focus:ring-2 focus:ring-brand-gold/70 focus:ring-offset-1 focus:ring-offset-brand-ink"
                 >
                 <span
                     aria-hidden="true"
