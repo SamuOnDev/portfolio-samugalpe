@@ -34,7 +34,7 @@ export const projects: Project[] = [
         type: 'Portfolio personal',
         year: '2025',
         tech: ['Astro', 'Tailwind', 'TypeScript'],
-        screenshot: '/projects/portfolio-home.jpg',
+        screenshot: '/performance.png',
         liveUrl: 'https://TU_URL_PORTFOLIO',
         codeUrl: 'https://github.com/TU_USER/portfolio-samuel-galpe',
         description: {

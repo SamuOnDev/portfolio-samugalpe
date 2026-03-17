@@ -10,15 +10,18 @@ interface Props {
 const { lang, path = '/' } = Astro.props as Props;
 ---
 
-<div class="flex items-center gap-2 text-xs text-slate-400">
+<div class="inline-flex items-center rounded-md border border-white/10 bg-[#0c141b] p-1 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-slate-400">
     {LANGS.map((l) => (
         <a
-        href={`/${l}${path}`}
-        class={`uppercase tracking-[0.18em] ${
-            l === lang ? 'text-slate-100' : 'text-slate-400 hover:text-slate-100'
-        }`}
+            href={`/${l}${path}`}
+            class={`rounded px-2 py-1 transition ${
+                l === lang
+                    ? 'bg-slate-100 text-[#091017]'
+                    : 'text-slate-400 hover:text-slate-100'
+            }`}
+            aria-current={l === lang ? 'true' : 'false'}
         >
-        {l}
+            {l}
         </a>
-  ))}
+    ))}
 </div>
